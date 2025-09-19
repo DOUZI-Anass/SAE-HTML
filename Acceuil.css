@@ -7,16 +7,17 @@
 .navbar li{
     margin: 10px;
 }
-/* Position relative pour le parent */
+
 .dropdown {
     position: relative;
+
 }
 
-/* Sous-menu caché */
+
 .submenu {
     display: none;
     position: absolute;
-    top: 100%; /* juste en dessous du lien parent */
+    top: 100%;
     left: 0;
     background: #f8f9fa;
     list-style: none;
@@ -27,7 +28,9 @@
     z-index: 1000;
 }
 
-/* Style des éléments du sous-menu */
+.dropdown:hover{
+    background: #cccccc;
+}
 .submenu li a {
     display: block;
     padding: 10px;
@@ -36,10 +39,9 @@
 }
 
 .submenu li a:hover {
-    background: #e9ecef;
+    background: blue;
 }
 
-/* Quand on survole le parent, afficher le menu */
 .dropdown:hover .submenu {
     display: block;
 }
