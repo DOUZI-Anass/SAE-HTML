@@ -70,7 +70,10 @@ nav{
 .dropdown:hover .submenu {
     display: block;
 }
+.imageLogo{
+    width: 140px;
 
+}
 .imageF{
     display: block;
     width: 15%;
