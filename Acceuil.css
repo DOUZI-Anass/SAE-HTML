@@ -161,3 +161,49 @@ footer {
     text-decoration: underline;
 }
 
+
+/* body */
+.carousel-item img {
+    height: 700px; /* hauteur intermédiaire */
+    object-fit: cover;
+    filter: brightness(0.8); /* assombrit un peu pour mieux voir le texte */
+    border-radius: 10px;
+}
+.carousel-caption {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    bottom: auto; /* enlève le "collage" en bas */
+    position: absolute;
+    text-align: center;
+}
+
+
+.carousel-caption p {
+    font-size: 1.2rem;
+    color: #f0f0f0; /* plus clair */
+    font-weight: 500;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+}
+
+/* Flèches navigation */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-size: 100%, 100%;
+    filter: invert(100%); /* rend bien visibles sur fond clair ou sombre */
+    width: 3rem;
+    height: 3rem;
+}
+/* Style de base des cartes/blocs */
+.card, .bloc-actualite, .bloc-action {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Effet au survol */
+.card:hover, .bloc-actualite:hover, .bloc-action:hover {
+    transform: translateY(-8px) scale(1.02); /* petit zoom + décalage */
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    color: cornflowerblue;
+}
