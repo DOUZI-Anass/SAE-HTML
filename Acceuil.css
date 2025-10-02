@@ -1,13 +1,21 @@
+/* HEADER */
 header {
     position: fixed;
     width: 100%;
     z-index: 1000;
     font-size: 20px;
-
+    background-color: #00AEEF; /* Bleu FAGE */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
-nav{
+
+/* NAVBAR */
+nav {
     height: 90px;
-    font-family: "Helvetica Neue", Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    font-family: 'Poppins', "Helvetica Neue", Arial, sans-serif;
     font-size: 16px;
     font-weight: 600;
 }
@@ -16,60 +24,87 @@ nav{
     list-style: none;
     margin: 0;
     padding: 0;
-}
-.navbar li{
-    margin: 15px;
+    display: flex;
+    align-items: center;
 }
 
+.navbar li {
+    margin: 0 15px;
+    position: relative;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #0e3e61; /* blanc pour contraste */
+    padding: 8px 12px;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.navbar a:hover {
+    background: rgba(255,255,255,0.2); /* effet subtil */
+    color: #1289dd; /* jaune pour contraster */
+}
+
+/* DROPDOWN */
 .dropdown {
     position: relative;
-
 }
 
+/* Sous-menu */
 .submenu {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
-    background: #f8f9fa;
+    background: #fff;
     list-style: none;
-    padding: 0;
+    padding: 10px 0;
     margin: 0;
-    border: 1px solid #ccc;
-    min-width: 150px;
+    border-radius: 6px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    min-width: 180px;
     z-index: 1000;
 }
 
-.dropdown:hover{
-    background: #cccccc;
-}
+/* Items du sous-menu */
 .submenu li a {
     display: block;
-    padding: 10px;
-    color: black;
+    padding: 10px 20px;
+    color: #333;
     text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
 .submenu li a:hover {
-    background: blue;
+    background: #f0f9ff;
+    color: #00AEEF; /* bleu FAGE */
 }
 
-.btnLoupe {
-    border: 1px solid blue;
-}
-
-.btnLoupe .bi-search {
-    color: blue;
-}
-
-.btnLoupe:hover {
-    border-color: blue;
-    background-color: skyblue;
-}
-
+/* Affichage au survol */
 .dropdown:hover .submenu {
     display: block;
 }
+
+/* Loupe (recherche) */
+.btnLoupe {
+    border: 1px solid #257dbf;
+    padding: 5px 10px;
+    border-radius: 6px;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.btnLoupe .bi-search {
+    color: #5798ca;
+}
+
+.btnLoupe:hover {
+    border-color: rgb(51, 22, 197);
+    background-color: rgba(255,255,255,0.2);
+}
+
 .imageLogo{
     width: 140px;
 
