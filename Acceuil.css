@@ -43,7 +43,7 @@ nav {
 
 .navbar a:hover {
     background: rgba(255,255,255,0.2); /* effet subtil */
-    color: #1289dd; /* jaune pour contraster */
+    color: #4b52cd;
 }
 
 /* DROPDOWN */
@@ -57,12 +57,12 @@ nav {
     position: absolute;
     top: 100%;
     left: 0;
-    background: #fff;
+    background: #119fdf;
     list-style: none;
     padding: 10px 0;
     margin: 0;
     border-radius: 6px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 15px rgb(15, 130, 221);
     min-width: 180px;
     z-index: 1000;
 }
@@ -78,8 +78,8 @@ nav {
 }
 
 .submenu li a:hover {
-    background: #f0f9ff;
-    color: #00AEEF; /* bleu FAGE */
+    background: none ;
+    color: #ffffff; /* bleu FAGE */
 }
 
 /* Affichage au survol */
