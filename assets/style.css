@@ -1,3 +1,6 @@
+/*=============================
+=         FONTS & ROOT        =
+=============================*/
 @font-face {
     font-family: 'HelveticaBold';
     src: url('assets/fonts/Helvetica-Bold.ttf') format('truetype');
@@ -5,16 +8,18 @@
     font-style: normal;
 }
 
-
 :root {
     --fage-blue: #009DC5;
 }
 
-/* ================= HEADER ================= */
+/*=============================
+=           HEADER            =
+=============================*/
 .navbar {
     background-color: transparent;
     transition: background-color 0.4s ease, box-shadow 0.3s ease;
-    padding: 0.5rem 0.5rem; /* un peu moins haut que 1.8rem */
+    padding: 0.5rem 0.5rem;
+    font-family: 'HelveticaBold', sans-serif;
 }
 
 .navbar.scrolled {
@@ -24,13 +29,10 @@
 
 .navbar-nav .nav-link {
     color: white !important;
-    margin: 0 25px; /* un peu plus d’espace horizontal */
-    font-size: 1.3rem; /* augmente la taille du texte */
+    margin: 0 25px;
+    font-size: 1.3rem;
     font-weight: 600;
     transition: opacity 0.3s;
-}
-.navbar, .navbar .nav-link, #searchBtn {
-    font-family: 'HelveticaBold', sans-serif;
 }
 
 .navbar-nav .nav-link:hover {
@@ -40,32 +42,35 @@
 .navbar i {
     color: white;
     cursor: pointer;
-    font-size: 1.3rem; /* augmente la taille des icônes */
+    font-size: 1.3rem;
 }
 
-/* Logo un peu plus grand mais proportionnel */
 .logo-img {
-    height: 75px; /* réduit par rapport à 70px */
+    height: 75px;
     filter: brightness(0) invert(1);
 }
 
-/* ================= SEARCH BUTTON ================= */
+/*=============================
+=        SEARCH BUTTON        =
+=============================*/
 #searchInput {
     display: none;
-    width: 220px; /* un peu plus large */
-    padding: 6px 12px; /* légèrement plus grand */
+    width: 220px;
+    padding: 6px 12px;
     border-radius: 4px;
     border: 1px solid #ccc;
-    font-size: 1rem; /* texte plus grand */
+    font-size: 1rem;
     transition: 0.3s;
 }
 
 #searchInput.show { display: inline-block; }
 
-/* ================= HERO ================= */
+/*=============================
+=            HERO             =
+=============================*/
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), /* plus sombre */
+    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
     url('../assets/image/737.png') center/cover no-repeat fixed;
     display: flex;
     justify-content: center;
@@ -74,24 +79,110 @@
     color: white;
 }
 
-
-/* ================= SECTIONS ================= */
+/*=============================
+=           SECTIONS          =
+=============================*/
 .section-title {
-    font-weight: 700;
+    font-weight: 850;
     color: var(--fage-blue);
     text-transform: uppercase;
     margin-bottom: 2rem;
+    font-family: 'HelveticaBold', sans-serif;
+    text-align: left;
+    position: relative;
 }
+.section-title::after {
+    content: "";
+    display: block;
+    width: 180px;            /* largeur de la ligne sous le titre */
+    height: 4px;            /* épaisseur de la ligne */
+    background-color: var(--fage-blue);
+    margin-top: 8px;        /* espace entre le texte et la ligne */
+    border-radius: 2px;     /* coins arrondis optionnels */
+}
+/* Pour toutes les sections sauf le paragraphe centré */
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centre verticalement */
+    align-items: flex-start; /* <-- met le contenu à gauche */
+}
+
+section .container {
+    text-align: left; /* texte aligné à gauche */
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Si tu veux que le paragraphe reste centré */
+#paragraphe .container {
+    text-align: center;
+    align-items: center; /* seulement pour le paragraphe */
+}
+
+
 
 .bg-light .card { border: none; }
 .card h5 { font-weight: 600; }
 
-/* ================= FOOTER ================= */
+#actions {
+
+}
+#actions  .section-title {
+
+}
+
+/*=============================
+=         PARAGRAPHE          =
+=============================*/
+#paragraphe {
+    background-color: #ffffff;
+    color: #6a6363;
+    font-size: 3rem;
+    line-height: 1.8;
+    font-family: 'Inter Semi Bold', sans-serif;
+}
+
+#paragraphe .blue-text {
+    color: var(--fage-blue);
+    font-weight: 1000;
+    font-size: 2.5rem;
+}
+
+#paragraphe .lead {
+    font-weight: 600;
+    font-size: 2.3rem;
+    max-width: 95%;
+    margin: 0 auto 10px;
+}
+
+/*=============================
+=         BOUTON DONNER       =
+=============================*/
+.btn-donner {
+    background-color: var(--fage-blue);
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+}
+
+.btn-donner:hover {
+    background-color: #007ea0;
+    transform: scale(1.05);
+}
+
+/*=============================
+=           FOOTER            =
+=============================*/
 footer {
     background: linear-gradient(160deg,#009dc5 ,   #00aeef);
     color: white;
     padding: 3rem 0;
 }
+
 footer h5 { font-size: 16px; letter-spacing: 0.5px; }
 footer ul li { line-height: 1.8; cursor: default; }
 footer i { font-size: 20px; cursor: pointer; transition: opacity 0.3s; }
@@ -101,32 +192,19 @@ footer i:hover { opacity: 0.8; }
     width: auto;
 }
 
-/* ================= RESPONSIVE ================= */
+/*=============================
+=          RESPONSIVE         =
+=============================*/
 @media(max-width:991px){
     .navbar-nav {
         background-color: var(--fage-blue);
-        padding: 1.5rem; /* hauteur adaptée pour mobile */
-        border-radius: 5px;
-    }
-    .navbar-nav .nav-link { font-size: 1rem; }
-    #searchInput { width: 100%; margin-top: 5px; }
-}
-
-@media(max-width: 991px){
-    .navbar-nav {
-        background-color: var(--fage-blue);
-        padding: 1.5rem; /* espace autour du menu */
+        padding: 1.5rem;
         border-radius: 5px;
     }
     .navbar-nav .nav-link {
         font-size: 1rem;
-        margin: 10px 0; /* espace vertical entre les liens */
+        margin: 10px 0;
     }
     #searchInput { width: 100%; margin-top: 5px; }
-    #searchBtn {
-        /* espace correct avec les liens */
-        /* espace vertical entre les liens */
-        margin: 20px 10px;
-    }
+    #searchBtn { margin: 20px 10px; }
 }
-
