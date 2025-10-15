@@ -16,7 +16,7 @@
 
 <!-- HEADER -->
 <nav class="navbar navbar-expand-lg fixed-top px-3" id="navbar">
-    <a class="navbar-brand" href="#"><img src="assets/image/LogoFageBlanc.png" class="logo-img" alt="Logo"></a>
+    <a class="navbar-brand" href="index.php"><img src="assets/image/LogoFageBlanc.png" class="logo-img" alt="Logo"></a>
     <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
         <span class="navbar-toggler-icon"></span>
     </button>
