@@ -1,0 +1,86 @@
+.navbar {
+    background-color: #009DC5 !important;
+    transition: none !important; /* empêche l'effet de transparence */
+}
+
+
+/*Images et blocs*/
+.imgM {
+    width: 500px;
+    transition: transform 0.3s ease;
+}
+
+.imgM:hover {
+    transform: scale(1.03);
+}
+
+.imgM.test{
+    width: 400px;
+}
+
+section.container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #009DC5 !important;
+}
+
+
+
+section.container p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* Adaptation responsive */
+@media (max-width: 992px) {
+    .hero-quiSommeNous {
+        height: 45vh;
+    }
+
+    .hero-quiSommeNous h1 {
+        font-size: 2.3rem;
+    }
+
+    section.container h2 {
+        text-align: center;
+    }
+
+    section.container p {
+        text-align: justify;
+    }
+
+    .col-md-6.text-center img {
+        width: 90%;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-quiSommeNous {
+        height: 40vh;
+        padding: 30px 10px;
+    }
+
+    .hero-quiSommeNous h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-quiSommeNous p {
+        font-size: 1rem;
+    }
+
+    section.container {
+        padding: 20px;
+    }
+
+    section.container p {
+        font-size: 1rem;
+    }
+}
+
+section .centrale {
+    width: 1000px;
+    justify-content: center;
+    margin-left: 160px
+}
+
