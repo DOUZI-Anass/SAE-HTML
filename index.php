@@ -1,5 +1,12 @@
 <?php require 'header.php'?>
 
+<section class="hero d-flex flex-column justify-content-center align-items-center text-center text-white">
+    <div class="container">
+        <h1 class="fw-bold mb-3">La FAGE, c’est bien plus qu’une fédération...</h1>
+        <p class="lead">Un mouvement d’étudiants engagés pour d’autres étudiants.</p>
+    </div>
+</section>
+
 <!-- ACTUALITÉS -->
 <section id="actualites" class="py-5">
     <div class="container">

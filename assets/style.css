@@ -49,6 +49,7 @@
     height: 75px;
     filter: brightness(0) invert(1);
 }
+
 /*=============================
 =      NAVBAR DROPDOWN        =
 =============================*/
@@ -89,6 +90,7 @@
 .navbar-nav {
     margin-left: auto;
     margin-right: auto;
+    transform: translateX(-50px); /* décale de 50px vers la gauche */
 }
 
 /* Évite que le menu soit trop à droite à cause du bouton recherche */
