@@ -80,4 +80,24 @@ Fondée en 1989, elle repose sur la démocratie participative. Elle regroupe pr�
 </section>
 
 
+<!-- Bloc téléchargement PDF -->
+<div class="row justify-content-center text-center telechargement-section">
+  <div class="col-12 col-md-8">
+    <h2 class="fw-bold text-uppercase mb-4">Documents à télécharger</h2>
+    <p class="mb-4">Découvrez nos documents officiels pour en savoir plus sur nos actions et nos engagements :</p>
+
+    <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
+      <a href="assets/pdf/presentation_fage.pdf" class="btn btn-primary px-4 py-2" download>
+        📄 Télécharger la présentation de la FAGE
+      </a>
+      <a href="assets/pdf/rapport_activite.pdf" class="btn btn-outline-primary px-4 py-2" download>
+        📘 Télécharger le rapport d'activité
+      </a>
+    </div>
+  </div>
+</div>
+
+</section>
+
+
 <?php require 'footer.php'; ?>
