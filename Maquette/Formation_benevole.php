@@ -1,5 +1,5 @@
 <?php
-$page = 'autre';
+
 require 'header.php';
 ?>
   <title>Formation des bénévoles - FAGE</title>
