@@ -4,7 +4,7 @@ require 'header.php';
 ?>
 
   <title>Formation des bénévoles - FAGE</title>
-  <link rel="stylesheet" href="Formation_Benevole.css">
+  <link rel="stylesheet" href="benevole.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
 <body>
