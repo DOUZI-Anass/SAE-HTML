@@ -33,7 +33,7 @@
                 <ul class="dropdown-menu"><li><a class="dropdown-item" href="#">Vivre en bonne santé</a></li><li><a class="dropdown-item" href="#">Lutte contre la précarité</a></li></ul>
             </li>
             <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">SERVICES</a>
-                <ul class="dropdown-menu"><li><a class="dropdown-item" href="#">Formation des bénévoles</a></li><li><a class="dropdown-item" href="#">Financer ses projets</a></li></ul>
+                <ul class="dropdown-menu"><li><a class="dropdown-item" href="Maquette/Formation_benevole.php">Formation des bénévoles</a></li><li><a class="dropdown-item" href="#">Financer ses projets</a></li></ul>
             </li>
         </ul>
         <button id="searchBtn" class="btn text-white ms-lg-3"><i class="bi bi-search fs-5"></i></button>
