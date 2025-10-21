@@ -32,6 +32,46 @@ section.container p {
     color: #333;
 }
 
+
+
+/* --- Bloc principal "Qui sommes-nous ?" --- */
+section.container.py-5.mt-5 {
+    background-color: #ffffff;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15); /* ombre plus marquée */
+    border-radius: 20px;
+    padding: 50px 40px;
+    margin-top: 100px; /* pour respirer un peu sous la navbar */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section.container.py-5.mt-5:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.18);
+}
+
+
+
+
+
+
+/* Style uniquement pour la zone de texte */
+section .row .col-md-6.mb-4.mb-md-0 {
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* ombre douce */
+    border-radius: 10px;
+    padding: 25px;
+    background-color: #fff;
+}
+/* Optionnel : petit effet hover pour plus de relief */
+section .row .col-md-6.mb-4.mb-md-0:hover {
+    transform: translateY(-1px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+
+
+
 /* Adaptation responsive */
 @media (max-width: 992px) {
     .hero-quiSommeNous {
@@ -83,4 +123,56 @@ section .centrale {
     justify-content: center;
     margin-left: 160px
 }
+
+/* --- Bloc Téléchargement PDF --- */
+.telechargement-section {
+    background-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* ombre douce et propre */
+    border-radius: 15px; /* angles légèrement arrondis */
+    padding: 40px 30px;
+    margin-top: 60px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.telechargement-section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Titre principal du bloc PDF */
+.telechargement-section h2 {
+    color: #007ea7; /* bleu un peu plus foncé pour ressortir */
+    font-size: 1.9rem;
+    font-weight: 700;
+}
+
+/* Paragraphe d’intro */
+.telechargement-section p {
+    color: #555;
+}
+
+/* Boutons de téléchargement */
+.telechargement-section a.btn {
+    font-weight: 600;
+    border-radius: 30px;
+    box-shadow: 0 3px 10px rgba(0, 157, 197, 0.2);
+    transition: all 0.3s ease;
+}
+
+.telechargement-section a.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 157, 197, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .telechargement-section {
+        padding: 25px 15px;
+    }
+
+    .telechargement-section h2 {
+        font-size: 1.6rem;
+    }
+}
+
 
