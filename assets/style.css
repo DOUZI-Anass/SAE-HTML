@@ -248,21 +248,104 @@ section .container {
 /*=============================
 =           FOOTER            =
 =============================*/
-footer {
-    background: linear-gradient(160deg,#009dc5 ,   #00aeef);
+
+.footer {
+    background-color: #00AEEF;
     color: white;
-    padding: 3rem 0;
+    padding: 60px 20px 20px;
+    margin-top: 100px;
+    font-family: "Poppins", sans-serif;
 }
 
-footer h5 { font-size: 16px; letter-spacing: 0.5px; }
-footer ul li { line-height: 1.8; cursor: default; }
-footer i { font-size: 20px; cursor: pointer; transition: opacity 0.3s; }
-footer i:hover { opacity: 0.8; }
-.footer-logo {
-    height: 100px;
-    width: auto;
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
 }
 
+.footer-logo img {
+    width: 120px;
+    margin-bottom: 10px;
+}
+
+.footer-logo p {
+    font-size: 0.9rem;
+    margin: 4px 0;
+    color: #eaf8ff;
+}
+
+.footer-col h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: white;
+    border-bottom: 2px solid white;
+    display: inline-block;
+    padding-bottom: 4px;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li {
+    margin: 8px 0;
+}
+
+.footer-col ul li a {
+    color: #eaf8ff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Bas du footer */
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.3);
+    padding-top: 25px;
+    margin-top: 40px;
+}
+
+.footer-bottom p {
+    font-size: 0.9rem;
+    color: #eaf8ff;
+    margin: 5px 0;
+}
+
+.footer-bottom a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+/* Réseaux sociaux */
+.social-icons {
+    margin-bottom: 10px;
+}
+
+.social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.3rem;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
 /*=============================
 =          RESPONSIVE         =
 =============================*/

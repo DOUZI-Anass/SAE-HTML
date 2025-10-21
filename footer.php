@@ -1,32 +1,75 @@
 <!-- FOOTER -->
-<footer>
-    <div class="container py-5">
-        <div class="row gy-4 text-center text-md-start">
-            <div class="col-md-3"><img src="assets/image/LogoFageBlanc.png" class="footer-logo mb-3" alt="Logo"></div>
-            <div class="col-md-3"><h5>LA FAGE</h5><ul class="list-unstyled"><li>Qui sommes-nous ?</li><li>Nos idées</li><li>Innovation sociale</li><li>Service</li></ul></div>
-<div class="col-md-3">
-  <h5>Suivez-nous</h5>
-  <div class="d-flex gap-3 fs-4 justify-content-center justify-content-md-start">
-    <a href="https://www.facebook.com/fage.fr" target="_blank" aria-label="Facebook" style="color: inherit; text-decoration: none;">
-      <i class="bi bi-facebook"></i>
-    </a>
-    <a href="https://x.com/La_FAGE" target="_blank" aria-label="X (Twitter)" style="color: inherit; text-decoration: none;">
-      <i class="bi bi-twitter-x"></i>
-    </a>
-    <a href="https://www.linkedin.com/company/la-fage/" target="_blank" aria-label="LinkedIn" style="color: inherit; text-decoration: none;">
-      <i class="bi bi-linkedin"></i>
-    </a>
-    <a href="https://www.instagram.com/la_fage/" target="_blank" aria-label="Instagram" style="color: inherit; text-decoration: none;">
-      <i class="bi bi-instagram"></i>
-    </a>
-  </div>
-</div>
-            <div class="col-md-3"><h5>Contact</h5><p>79 rue Périer, 92120 Montrouge</p><p>Tél : 01 40 33 70 70</p></div>
-        </div>
-        <hr class="my-4">
-        <div class="text-center small">© 2025 FAGE — Tous droits réservés</div>
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- 🔹 LOGO -->
+    <div class="footer-logo">
+        <link rel="stylesheet" href="assets/style.css">
+      <img src="assets/image/logo-fage.png" alt="Logo FAGE">
+      <p>Fédération des Associations Générales Étudiantes</p>
+      <p>79 rue Périer, 92120 Montrouge</p>
+      <p>Tél : <a href="tel:+33140337070">01 40 33 70 70</a></p>
     </div>
+
+    <!-- 🔹 RUBRIQUE : LA FAGE -->
+    <div class="footer-col">
+      <h4>LA FAGE</h4>
+      <ul>
+        <li><a href="quiSommeNous.php">Qui sommes-nous ?</a></li>
+        <li><a href="#">Nos actions</a></li>
+        <li><a href="#">Nos valeurs</a></li>
+        <li><a href="#">Notre mission</a></li>
+      </ul>
+    </div>
+
+    <!-- 🔹 RUBRIQUE : NOS IDÉES -->
+    <div class="footer-col">
+      <h4>NOS IDÉES</h4>
+      <ul>
+        <li><a href="#">Représentation étudiante</a></li>
+        <li><a href="#">Égalité des chances</a></li>
+        <li><a href="#">Santé et bien-être</a></li>
+        <li><a href="#">Logement et vie étudiante</a></li>
+      </ul>
+    </div>
+
+    <!-- 🔹 RUBRIQUE : INNOVATION SOCIALE -->
+    <div class="footer-col">
+      <h4>INNOVATION SOCIALE</h4>
+      <ul>
+        <li><a href="#">Entrepreneuriat étudiant</a></li>
+        <li><a href="#">Projets solidaires</a></li>
+        <li><a href="#">Développement durable</a></li>
+      </ul>
+    </div>
+
+    <!-- 🔹 RUBRIQUE : SERVICES -->
+    <div class="footer-col">
+      <h4>SERVICES</h4>
+      <ul>
+        <li><a href="Formation_benevole.php">Formation des bénévoles</a></li>
+        <li><a href="#">Financer ses projets</a></li>
+        <li><a href="#">Catalogue de formations</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 🔹 BAS DE PAGE -->
+  <div class="footer-bottom">
+    <div class="social-icons">
+      <a href="https://www.facebook.com/fage.officiel" target="_blank"><i class="bi bi-facebook"></i></a>
+      <a href="https://x.com/FAGEOfficiel" target="_blank"><i class="bi bi-twitter-x"></i></a>
+      <a href="https://www.linkedin.com/company/fage" target="_blank"><i class="bi bi-linkedin"></i></a>
+    </div>
+    <p>
+      <a href="#">Plan du site</a> |
+      <a href="#">Mentions légales</a> |
+      <a href="#">Politique de confidentialité</a>
+    </p>
+    <p>© 2025 FAGE — Tous droits réservés</p>
+  </div>
 </footer>
+
 
 <script>
     const navbar = document.getElementById('navbar');

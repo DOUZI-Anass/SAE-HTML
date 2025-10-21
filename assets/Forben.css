@@ -1,0 +1,191 @@
+/* =========================================================
+   FAGE - Formation des Bénévoles (version finale)
+   ========================================================= */
+/* ========= FIX DU HEADER BLEU ========= */
+header,
+header.scrolled,
+nav,
+.topbar {
+    background-color: #00AEEF !important;
+
+}
+
+
+
+/* ---------- BASE ---------- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", "Helvetica Neue", sans-serif;
+    color: #333;
+    background-color: #ececec;
+    line-height: 1.7;
+}
+
+/* ---------- HEADER TOUJOURS BLEU ---------- */
+header {
+    background-color: #00AEEF !important; /* Bleu FAGE fixe */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: none !important; /* supprime tout effet de scroll */
+}
+
+nav {
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+}
+
+nav a {
+    color: #0e3e61;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: white;
+}
+
+/* Si ton JS ajoute une classe type "scrolled" au header → neutralise-la */
+header.scrolled {
+    background-color: #00AEEF !important;
+}
+
+/* ---------- CONTENU PRINCIPAL ---------- */
+.page-formation-fage {
+    max-width: 1200px;
+    margin: 150px auto 80px auto;
+    padding: 0 20px;
+}
+
+/* Intro */
+.intro-section {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.intro-section h1 {
+    font-size: 2.3rem;
+    color: #00AEEF;
+    margin-bottom: 15px;
+    border-bottom: 3px solid #00AEEF;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.intro-section p {
+    color: #444;
+    font-size: 1.05rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* ---------- BLOCS (Texte + Image) ---------- */
+.bloc {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    margin: 80px 0;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    padding: 40px 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bloc:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.bloc.inverse {
+    flex-direction: row-reverse;
+}
+
+.bloc-texte {
+    flex: 1;
+}
+
+.bloc-texte h2 {
+    color: #00AEEF;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.bloc-texte p {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.bloc-texte ul {
+    margin-top: 15px;
+    padding-left: 20px;
+    color: #444;
+}
+
+.bloc-texte ul li {
+    margin-bottom: 8px;
+}
+
+.bloc-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bloc-image img {
+    width: 85%;
+    max-width: 420px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+    .bloc {
+        flex-direction: column;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .bloc.inverse {
+        flex-direction: column;
+    }
+
+    .bloc-image img {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    .bloc-texte h2 {
+        font-size: 1.6rem;
+    }
+
+    .intro-section h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    nav {
+        padding: 0 20px;
+    }
+
+    .page-formation-fage {
+        margin: 120px auto 60px auto;
+    }
+
+    .bloc {
+        margin: 50px 0;
+    }
+}
