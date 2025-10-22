@@ -253,7 +253,6 @@ section .container {
     background-color: #00AEEF;
     color: white;
     padding: 60px 20px 20px;
-    margin-top: 100px;
     font-family: "Poppins", sans-serif;
 }
 
@@ -361,4 +360,177 @@ section .container {
     }
     #searchInput { width: 100%; margin-top: 5px; }
     #searchBtn { margin: 20px 10px; }
+}
+/*=============================
+=          RESPONSIVE         =
+=============================*//*=============================
+=          RESPONSIVE         =
+=============================*//*=============================
+=          RESPONSIVE         =
+=============================*//*=============================
+=          RESPONSIVE         =
+=============================*//*=============================
+=          RESPONSIVE         =
+=============================*/
+
+/*=============================
+=      QUI SOMME NOUS PAGE     =
+=============================*/
+
+/* Encapsuler tout dans .qsn-page pour éviter les conflits */
+.qsn-page .navbar {
+    background-color: #009DC5 !important;
+    transition: none !important;
+}
+
+.qsn-page .imgM {
+    width: 500px;
+    transition: transform 0.3s ease;
+}
+
+.qsn-page .imgM:hover {
+    transform: scale(1.03);
+}
+
+.qsn-page .imgM.test {
+    width: 400px;
+}
+
+.qsn-page section.container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #009DC5 !important;
+}
+
+.qsn-page section.container p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* Bloc principal "Qui sommes-nous ?" */
+.qsn-page section.container.py-5.mt-5 {
+    background-color: #ffffff;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    padding: 50px 40px;
+    margin-top: 100px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.qsn-page section.container.py-5.mt-5:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.18);
+}
+
+/* Style uniquement pour la zone de texte */
+.qsn-page section .row .col-md-6.mb-4.mb-md-0 {
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 25px;
+    background-color: #fff;
+}
+.qsn-page section .row .col-md-6.mb-4.mb-md-0:hover {
+    transform: translateY(-1px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Adaptation responsive */
+@media (max-width: 992px) {
+    .qsn-page .hero-quiSommeNous {
+        height: 45vh;
+    }
+
+    .qsn-page .hero-quiSommeNous h1 {
+        font-size: 2.3rem;
+    }
+
+    .qsn-page section.container h2 {
+        text-align: center;
+    }
+
+    .qsn-page section.container p {
+        text-align: justify;
+    }
+
+    .qsn-page .col-md-6.text-center img {
+        width: 90%;
+    }
+}
+
+@media (max-width: 576px) {
+    .qsn-page .hero-quiSommeNous {
+        height: 40vh;
+        padding: 30px 10px;
+    }
+
+    .qsn-page .hero-quiSommeNous h1 {
+        font-size: 1.8rem;
+    }
+
+    .qsn-page .hero-quiSommeNous p {
+        font-size: 1rem;
+    }
+
+    .qsn-page section.container {
+        padding: 20px;
+    }
+
+    .qsn-page section.container p {
+        font-size: 1rem;
+    }
+}
+
+.qsn-page section .centrale {
+    width: 1000px;
+    justify-content: center;
+    margin-left: 160px;
+}
+
+/* Bloc téléchargement PDF */
+.qsn-page .telechargement-section {
+    background-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 15px;
+    padding: 40px 30px;
+    margin-top: 60px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.qsn-page .telechargement-section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.qsn-page .telechargement-section h2 {
+    color: #007ea7;
+    font-size: 1.9rem;
+    font-weight: 700;
+}
+
+.qsn-page .telechargement-section p {
+    color: #555;
+}
+
+.qsn-page .telechargement-section a.btn {
+    font-weight: 600;
+    border-radius: 30px;
+    box-shadow: 0 3px 10px rgba(0, 157, 197, 0.2);
+    transition: all 0.3s ease;
+}
+
+.qsn-page .telechargement-section a.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 157, 197, 0.3);
+}
+
+@media (max-width: 768px) {
+    .qsn-page .telechargement-section {
+        padding: 25px 15px;
+    }
+
+    .qsn-page .telechargement-section h2 {
+        font-size: 1.6rem;
+    }
 }
