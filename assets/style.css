@@ -250,7 +250,7 @@ section .container {
 =============================*/
 
 .footer {
-    background-color: #00AEEF;
+    background-color: var(--fage-blue);
     color: white;
     padding: 60px 20px 20px;
     font-family: "Poppins", sans-serif;
@@ -534,3 +534,272 @@ section .container {
         font-size: 1.6rem;
     }
 }
+/* =========================
+   PAGE EVENEMENTS
+========================= */
+.evenement-page .navbar {
+    background-color: #009DC5 !important;
+}
+
+.carousel-simple {
+    position: relative;
+    height: 80vh;
+    overflow: hidden;
+}
+
+.carousel-simple .carousel-slide {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease;
+    z-index: 1; /* par défaut derrière */
+}
+
+.carousel-simple .carousel-slide.active {
+    opacity: 1;
+    z-index: 5; /* slide active au-dessus */
+}
+
+.carousel-simple img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(90%);
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #fff;
+    max-width: 700px;
+}
+
+.carousel-caption h2 {
+    font-family: 'HelveticaBold', sans-serif;
+    font-size: 2.3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.carousel-caption p {
+    font-family: 'Inter Semi Bold', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.carousel-caption .btn {
+    font-family: 'HelveticaBold', sans-serif;
+    font-weight: 600;
+    background-color: #009DC5;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 25px;
+    transition: all 0.3s ease;
+}
+
+.carousel-caption .btn:hover {
+    background-color: #007ea0;
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   BOUTONS DE NAVIGATION DU CARROUSEL
+========================= */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    width: 50px;           /* bouton un peu plus grand */
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;       /* icône bien visible */
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background: rgba(0, 0, 0, 0.7);
+    transform: translateY(-50%) scale(1.1);
+}
+.carousel-btn.prev {
+    left: 30px;
+}
+
+.carousel-btn.next {
+    right: 30px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .carousel-caption h2 {
+        font-size: 1.6rem;
+    }
+    .carousel-caption p {
+        font-size: 0.95rem;
+    }
+}
+/* =========================
+   EFFET D'OMBRE SUR LE CARROUSEL
+========================= */
+.carousel-simple img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(70%);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.carousel-simple .carousel-slide.active img {
+    transform: scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* =========================
+   PAGE CONGRÈS NATIONAL
+========================= */
+.hero-evenement {
+    position: relative;
+    height: 75vh;
+    overflow: hidden;
+}
+
+.hero-evenement .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(70%);
+}
+
+.hero-evenement .hero-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-evenement h1 {
+    font-size: 2.3rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.hero-evenement p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+.hero-evenement .hero-overlay p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+
+.hero-evenement .btn {
+    border-radius: 30px;
+    padding: 10px 25px;
+    font-weight: 600;
+    background-color: #009DC5;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.hero-evenement .btn:hover {
+    transform: scale(1.05);
+    background-color: #007ea0;
+    color: white; /* s’assure que le texte reste blanc au hover */
+}
+
+
+/* Images du contenu */
+.imgM {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+/* Sections inscription et tarif */
+#inscription {
+    background-color: #f8f9fa;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    padding: 50px 20px;
+}
+
+#inscription a.btn {
+    background-color: #009DC5;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+#inscription a.btn:hover {
+    background-color: #007ea0;
+    transform: scale(1.05);
+}
+
+.evenement-page h1,
+.evenement-page h2,
+.evenement-page h3 {
+    font-family: 'HelveticaBold', sans-serif;
+    color: var(--fage-blue);
+}
+
+.evenement-page p {
+    font-family: 'Inter Semi Bold', sans-serif;
+    color: #333;
+    line-height: 1.8;
+}
+
+/* Corrige les paragraphes et liens du footer */
+.evenement-page .footer,
+.evenement-page .footer p,
+.evenement-page .footer a,
+.evenement-page .footer-col ul li a,
+.evenement-page .footer-bottom p,
+.evenement-page .footer-bottom a {
+    color: #ffffff; /* texte blanc pour le footer */
+}
+
+/* Styles pour les titres h3 du contenu principal uniquement */
+.evenement-page > section h3 {
+    font-weight: 700;
+    color: var(--fage-blue);
+    font-family: 'HelveticaBold', sans-serif;
+    margin-bottom: 1rem;
+}
+
+

@@ -71,16 +71,7 @@ require 'header.php';
         </div>
     </div>
 
-    <!-- Bloc 4 -->
-    <div class="row justify-content-center centrale">
-        <div class="col-12 col-md-8 text-center">
-            <h2 class="fw-bold text-uppercase text-primary mb-3">Notre siège</h2>
-            <p class="mb-0">
-                79 rue Périer, 92120 Montrouge<br>
-                <strong>Téléphone :</strong> 01 40 33 70 70
-            </p>
-        </div>
-    </div>
+
 
 </section>
 
