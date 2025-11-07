@@ -12,35 +12,51 @@
     <div class="container">
         <h2 class="section-title">Actualités</h2>
         <div class="row g-4 justify-content-center">
+
+            <!-- Actu 1 -->
             <div class="col-md-4">
                 <div class="card h-100 shadow-sm">
-                    <img src="assets/image/solidarite.png" class="card-img-top" alt="Actu 1">
+                    <img src="assets/image/BOUGE_TON_CAMPUS.png" class="card-img-top" alt="Actu1">
                     <div class="card-body">
-                        <h5 class="card-title">Nouvelle réforme</h5>
-                        <small class="text-muted">20/09/2025</small>
-                        <p class="mt-2">Un résumé de l’actualité qui donne envie de cliquer...</p>
+                        <h5 class="card-title">Résultats des élections CNESER 2025</h5>
+                        <small class="text-muted">06/06/2025</small>
+                        <p class="mt-2">
+                            La FAGE confirme sa place de première organisation étudiante représentative au CNESER
+                            à l’issue des élections 2025. Un résultat qui témoigne de l’engagement continu de nos
+                            militants pour défendre les droits et les intérêts de tous les étudiants.
+                        </p>
+                        <a href="actualite-cneser2025.php" class="btn btn-outline-primary">Lire plus</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Actu 2 -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="assets/image/INDIC_COUT_RENTREE.jpeg" class="card-img-top" alt="Actu 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Coût de la rentrée 2025</h5>
+                        <small class="text-muted">05/09/2025</small>
+                        <p class="mt-2">
+                            Le coût d’une année étudiante augmente de 2.2%, Un étudiant devra en moyenne débourser 3.227
+                            euros pour une année universitaire, selon la Fage. Une hausse qui alerte le syndicat, alors
+                            que le deuxième volet de la réforme des bourses est à nouveau reporté..</p>
                         <a href="#" class="btn btn-outline-primary">Lire plus</a>
                     </div>
                 </div>
             </div>
+
+            <!-- Actu 3 -->
             <div class="col-md-4">
                 <div class="card h-100 shadow-sm">
-                    <img src="assets/image/Logo_FAGE.svg-2.png" class="card-img-top" alt="Actu 2">
+                    <img src="assets/image/BAROMETRE.png" class="card-img-top" alt="Actu 3">
                     <div class="card-body">
-                        <h5 class="card-title">Soutien étudiant</h5>
-                        <small class="text-muted">15/09/2025</small>
-                        <p class="mt-2">Une autre actu avec des infos pertinentes pour les jeunes.</p>
-                        <a href="#" class="btn btn-outline-primary">Lire plus</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm">
-                    <img src="assets/image/Agence.png" class="card-img-top" alt="Actu 3">
-                    <div class="card-body">
-                        <h5 class="card-title">Événement national</h5>
-                        <small class="text-muted">10/09/2025</small>
-                        <p class="mt-2">Résumé court de l’événement avec une image.</p>
+                        <h5 class="card-title">Baromètre de la précarité étudiante 2025</h5>
+                        <small class="text-muted">05/09/2025</small>
+                        <p class="mt-2">
+                            Le nouveau baromètre de la précarité étudiante révèle une situation toujours préoccupante,
+                            marquée par la hausse du coût de la vie et des inégalités persistantes. La FAGE appelle
+                            à des mesures concrètes pour garantir une vie étudiante digne.</p>
                         <a href="#" class="btn btn-outline-primary">Lire plus</a>
                     </div>
                 </div>
