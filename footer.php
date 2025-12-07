@@ -83,6 +83,4 @@
     searchBtn.addEventListener('click', () => searchInput.classList.toggle('show'));
 </script>
 
-</body>
-</html>
 
