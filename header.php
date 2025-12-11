@@ -1,3 +1,8 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -53,8 +58,24 @@ if(isset($page) && $page === 'formation') {
                 <ul class="dropdown-menu"><li><a class="dropdown-item" href="benevole.php">Formation des bénévoles</a></li></ul>
             </li>
         </ul>
-        <button id="searchBtn" class="btn text-white ms-lg-3"><i class="bi bi-search fs-5"></i></button>
+
+        
+        <?php if (isset($_SESSION['benevole'])): ?>
+            <span class="navbar-text text-white ms-3">
+        Bonjour, <?= htmlspecialchars($_SESSION['benevole']['prenom']) ?>
+    </span>
+            <a href="deconnexion.php" class="btn btn-outline-light btn-sm ms-2">Déconnexion</a>
+        <?php else: ?>
+            <a href="connexion.php" class="btn btn-outline-light btn-sm ms-2">Connexion</a>
+            <a href="inscription.php" class="btn btn-primary btn-sm ms-2">Inscription</a>
+        <?php endif; ?>
+
+        <button id="searchBtn" class="btn text-white ms-lg-3">
+            <i class="bi bi-search fs-5"></i>
+        </button>
         <input type="text" id="searchInput" placeholder="Rechercher...">
+
+
     </div>
 </nav>
 

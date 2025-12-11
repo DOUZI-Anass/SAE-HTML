@@ -115,26 +115,25 @@
 =============================*/
 
 
-/* Champ de recherche */
+/* on laisse #searchInput gérer sa marge via la transition de largeur */
 #searchInput {
-    position: absolute;
-    right: 80px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: none;
-    width: 220px;
-    padding: 6px 12px;
+    width: 0;
+    opacity: 0;
+    padding: 0;
     border-radius: 4px;
-    border: 1px solid #ccc;
+    border: 0;
     font-size: 1rem;
     background-color: white;
-    transition: opacity 0.3s ease;
-    opacity: 0;
+    transition: width 0.3s ease, opacity 0.3s ease, padding 0.3s ease, border 0.3s ease;
+    overflow: hidden;
 }
 
+/* quand tu ajoutes la classe .show avec ton JS */
 #searchInput.show {
-    display: block;
+    width: 220px;             /* largeur déployée */
     opacity: 1;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
 }
 /*=============================
 =            HERO             =
