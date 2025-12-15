@@ -1,4 +1,5 @@
 <?php
+global $pdo;
 $page = 'evenements';
 require 'header.php';
 ?>
@@ -108,3 +109,67 @@ require 'header.php';
         }
     }
 </script>
+
+<?php
+session_start();
+require 'config.php';
+
+// --- 1. Protection de la page ---
+
+// Redirige si non connecté
+if (!isset($_SESSION['benevole'])) {
+    header('Location: connexion.php');
+    exit;
+}
+
+// Redirige si ce n'est pas un administrateur
+$role_utilisateur = $_SESSION['benevole']['role'] ?? 'bénévole';
+if ($role_utilisateur !== 'administrateur') {
+    header('Location: index.php');
+    exit;
+}
+
+// --- 2. Traitement de l'insertion d'Événement ---
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $titre       = trim($_POST['titre_evenement']);
+    $date        = $_POST['date_evenement'];
+    $lieu        = trim($_POST['lieu_evenement']);
+    $description = trim($_POST['description_evenement']);
+
+    if ($titre === '' || $date === '') {
+        $error_message = "Erreur : Le titre et la date de l'événement sont obligatoires.";
+    } else {
+        try {
+            $stmt = $pdo->prepare("
+                INSERT INTO evenement (titre, description, date_evenement, lieu)
+                VALUES (?, ?, ?, ?)
+            ");
+
+            $stmt->execute([$titre, $description, $date, $lieu]);
+
+            $success_message = "L'événement '{$titre}' a été ajouté avec succès !";
+
+        } catch (PDOException $e) {
+            // Si la table n'existe pas, ou autre erreur SQL
+            $error_message = "Erreur BDD lors de l'ajout de l'événement.";
+        }
+    }
+} else {
+    // Si l'utilisateur accède à la page sans POST, on le renvoie à l'admin
+    header('Location: admin.php');
+    exit;
+}
+
+// --- 3. Redirection finale ---
+$redirect_url = 'admin.php';
+$message = $success_message ?? $error_message;
+$type = $success_message ? 'success' : 'error';
+
+if ($message) {
+    $redirect_url .= '?message=' . urlencode($message) . '&type=' . $type;
+}
+
+header('Location: ' . $redirect_url);
+exit;
+?>

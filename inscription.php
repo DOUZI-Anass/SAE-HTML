@@ -1,4 +1,5 @@
 <?php
+global $pdo;
 session_start();
 require 'config.php';
 
@@ -39,26 +40,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     if (empty($errors)) {
-        $hash = password_hash($mdp, PASSWORD_DEFAULT);
+    $hash = password_hash($mdp, PASSWORD_DEFAULT); // <-- 🎯 LE HACHAGE DOIT ÊTRE ICI !
 
-        $stmt = $pdo->prepare("
-            INSERT INTO benevole (nom, prenom, email, mdp)
-            VALUES (?, ?, ?, ?)
-        ");
-        $stmt->execute([$nom, $prenom, $email, $hash]);
+    $stmt = $pdo->prepare("
+        INSERT INTO benevole (nom, prenom, email, mdp)
+        VALUES (?, ?, ?, ?)");
+    $stmt->execute([$nom, $prenom, $email, $hash]); // <-- Le HASH ($hash) DOIT ÊTRE UTILISÉ ICI !
 
         // Récupération de l'id
         $id = $pdo->lastInsertId();
 
         // Stocker les infos utiles en session
         $_SESSION['benevole'] = [
-            'id_benevole' => $id,
-            'nom'         => $nom,
-            'prenom'      => $prenom,
-            'email'       => $email
+                'id_benevole' => $id,
+                'nom'         => $nom,
+                'prenom'      => $prenom,
+                'email'       => $email,
+                'role'        => 'bénévole' // <--- AJOUTEZ CETTE LIGNE
         ];
 
-        // Redirection vers l'accueil (ou une autre page)
+        // Redirection vers l'accueil
         header('Location: index.php');
         exit;
     }

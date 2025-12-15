@@ -3,29 +3,29 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 ?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>
-        FAGE |
-        <?php
-        // Titre dynamique
-        if(isset($page) && $page === 'evenements') echo '36ème Congrès National';
-        else if(isset($page) && $page === 'formation') echo 'Formation des bénévoles';
-        else echo 'Fédération des associations';
-        ?>
-    </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            FAGE |
+            <?php
+            // Titre dynamique
+            if(isset($page) && $page === 'evenements') echo '36ème Congrès National';
+            else if(isset($page) && $page === 'formation') echo 'Formation des bénévoles';
+            else echo 'Fédération des associations';
+            ?>
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
-    <link href="assets/style.css" rel="stylesheet">
+        <link href="assets/style.css" rel="stylesheet">
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</head>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
 <?php
 // Détermine la classe BODY dynamique
 $body_class = '';
@@ -49,7 +49,7 @@ if(isset($page) && $page === 'formation') {
                 <ul class="dropdown-menu"><li><a class="dropdown-item" href="quiSommeNous.php">Qui sommes-nous</a></li><li><a class="dropdown-item" href="evenements.php">Évènement</a></li></ul>
             </li>
             <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">NOS IDEES</a>
-                
+
             </li>
             <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">INNOVATION SOCIALE</a>
                 <ul class="dropdown-menu"><li><a class="dropdown-item" href="vivreEnBonneSante.php">Vivre en bonne santé</a></li></ul>
@@ -59,7 +59,7 @@ if(isset($page) && $page === 'formation') {
             </li>
         </ul>
 
-        
+
         <?php if (isset($_SESSION['benevole'])): ?>
             <span class="navbar-text text-white ms-3">
         Bonjour, <?= htmlspecialchars($_SESSION['benevole']['prenom']) ?>
@@ -74,6 +74,23 @@ if(isset($page) && $page === 'formation') {
             <i class="bi bi-search fs-5"></i>
         </button>
         <input type="text" id="searchInput" placeholder="Rechercher...">
+
+
+        <a href="index.php">Accueil</a>
+        <a href="benevole.php">Espace Bénévole</a>
+
+        <?php
+        // Afficher le lien Admin uniquement si le rôle est 'administrateur'
+        if (isset($_SESSION['benevole']['role']) && $_SESSION['benevole']['role'] === 'administrateur') {
+            echo '<a href="admin.php" style="font-weight: bold; color: red;">Gestion Admin</a>';
+        }
+        ?>
+
+        <?php if (isset($_SESSION['benevole'])): ?>
+            <a href="deconnexion.php">Déconnexion</a>
+        <?php else: ?>
+            <a href="connexion.php">Connexion</a>
+        <?php endif; ?>
 
 
     </div>
