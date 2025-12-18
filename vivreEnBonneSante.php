@@ -2,7 +2,6 @@
 $page = 'autre';
 require 'header.php';
 ?>
-<body class="qsn-page">
 
 <section class="container py-5 mt-5">
     <h2 class="section-title text-center mb-4">Vivre en bonne Santé</h2>

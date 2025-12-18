@@ -27,13 +27,21 @@ if (session_status() === PHP_SESSION_NONE) {
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     </head>
 <?php
-// Détermine la classe BODY dynamique
 $body_class = '';
-if(isset($page) && $page === 'formation') {
+
+// accueil
+if (isset($page) && $page === 'home') {
+    $body_class = 'home-page';
+}
+// pages spécifiques
+else if (isset($page) && $page === 'formation') {
     $body_class = 'formation-page';
-} else if(isset($page) && $page === 'evenements') {
+}
+else if (isset($page) && $page === 'evenements') {
     $body_class = 'evenement-page';
 }
+
+
 ?>
 <body class="<?php echo $body_class; ?>">
 
@@ -74,23 +82,6 @@ if(isset($page) && $page === 'formation') {
             <i class="bi bi-search fs-5"></i>
         </button>
         <input type="text" id="searchInput" placeholder="Rechercher...">
-
-
-        <a href="index.php">Accueil</a>
-        <a href="benevole.php">Espace Bénévole</a>
-
-        <?php
-        // Afficher le lien Admin uniquement si le rôle est 'administrateur'
-        if (isset($_SESSION['benevole']['role']) && $_SESSION['benevole']['role'] === 'administrateur') {
-            echo '<a href="admin.php" style="font-weight: bold; color: red;">Gestion Admin</a>';
-        }
-        ?>
-
-        <?php if (isset($_SESSION['benevole'])): ?>
-            <a href="deconnexion.php">Déconnexion</a>
-        <?php else: ?>
-            <a href="connexion.php">Connexion</a>
-        <?php endif; ?>
 
 
     </div>

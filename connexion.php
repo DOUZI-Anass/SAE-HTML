@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     'nom'         => $user['nom'],
                     'prenom'      => $user['prenom'],
                     'email'       => $user['email'],
-                    'role'        => $role_utilisateur
+                    'role'        => $user['role']
             ];
 
             // --- FIN DE LA MODIFICATION ---
@@ -76,5 +76,5 @@ include 'header.php';
             <button type="submit" class="btn btn-primary">Se connecter</button>
         </form>
     </div>
-
+<br><br><br>
 <?php include 'footer.php'; ?>

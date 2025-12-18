@@ -11,14 +11,13 @@ if (!isset($_SESSION['benevole'])) {
 
 // 2. Vérification de l'autorisation (rôle)
 // On récupère le rôle, avec 'bénévole' comme valeur par défaut au cas où
-$role_utilisateur = $_SESSION['benevole']['rôle'] ?? 'bénévole';
+$role_utilisateur = $_SESSION['benevole']['role'] ?? 'benevole';
 
 if ($role_utilisateur !== 'administrateur') {
-    // Si l'utilisateur n'est PAS un administrateur, on le renvoie à l'accueil
-    // Vous pouvez aussi afficher une page "Accès Refusé" (403)
-    header('Location: index.php');
+    header('Location: header.php');
     exit;
 }
+
 
 include 'header.php'; // Incluez votre en-tête HTML ici
 ?>

@@ -70,8 +70,7 @@ require 'header.php';
             <img src="assets/image/formationA.png" alt="Formation à la FAGE" class="imgM">
         </div>
     </div>
-
-
+    
 
 </section>
 
@@ -90,6 +89,6 @@ require 'header.php';
         </div>
     </div>
 </div>
-
+<br><br><br>
 <?php require 'footer.php'; ?>
 </body>

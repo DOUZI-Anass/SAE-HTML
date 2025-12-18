@@ -3,8 +3,9 @@ $host = 'localhost';
 $db   = 'Data_Fage_Back';
 $user = 'root';
 $pass = '';
+$port = 3306;
 
-$dsn = "mysql:host=$host;dbname=$db;charset=utf8mb4";
+$dsn = "mysql:host=$host;port=$port;dbname=$db;charset=utf8mb4";
 
 $options = [
     PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,

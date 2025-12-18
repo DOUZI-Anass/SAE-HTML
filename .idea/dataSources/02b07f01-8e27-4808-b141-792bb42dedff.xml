@@ -132,7 +132,7 @@ test\\_%|schema||&apos;&apos;||SELECT|G
 test\\_%|schema||&apos;&apos;||SHOW VIEW|G
 test\\_%|schema||&apos;&apos;||TRIGGER|G
 test\\_%|schema||&apos;&apos;||UPDATE|G</Grants>
-      <ServerVersion>12.1.2</ServerVersion>
+      <ServerVersion>10.4.32</ServerVersion>
     </root>
     <collation id="2" parent="1" name="armscii8_bin">
       <Charset>armscii8</Charset>
@@ -1143,7 +1143,7 @@ test\\_%|schema||&apos;&apos;||UPDATE|G</Grants>
     <schema id="324" parent="1" name="data_fage_back">
       <AutoIntrospectionLevel>3</AutoIntrospectionLevel>
       <LastIntrospectionLevel>3</LastIntrospectionLevel>
-      <LastIntrospectionLocalTimestamp>2025-12-11.21:37:17</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2025-12-18.18:26:43</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_general_ci</CollationName>
     </schema>
     <schema id="325" parent="1" name="information_schema">
@@ -1203,40 +1203,44 @@ test\\_%|schema||&apos;&apos;||UPDATE|G</Grants>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <column id="340" parent="334" name="rôle">
-      <Position>1</Position>
-      <StoredType>varchar(20)|0s</StoredType>
-    </column>
-    <column id="341" parent="334" name="prenom">
-      <Position>2</Position>
-      <StoredType>varchar(20)|0s</StoredType>
-    </column>
-    <column id="342" parent="334" name="email">
-      <Position>3</Position>
-      <StoredType>varchar(20)|0s</StoredType>
-    </column>
-    <column id="343" parent="334" name="id_benevole">
-      <AutoIncrement>9</AutoIncrement>
+    <column id="340" parent="334" name="id_benevole">
+      <AutoIncrement>5</AutoIncrement>
       <NotNull>1</NotNull>
-      <Position>4</Position>
+      <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="344" parent="334" name="nom">
-      <Position>5</Position>
-      <StoredType>varchar(20)|0s</StoredType>
-    </column>
-    <column id="345" parent="334" name="mdp">
+    <column id="341" parent="334" name="nom">
       <NotNull>1</NotNull>
-      <Position>6</Position>
+      <Position>2</Position>
+      <StoredType>varchar(100)|0s</StoredType>
+    </column>
+    <column id="342" parent="334" name="prenom">
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StoredType>varchar(100)|0s</StoredType>
+    </column>
+    <column id="343" parent="334" name="email">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredType>varchar(150)|0s</StoredType>
+    </column>
+    <column id="344" parent="334" name="mdp">
+      <NotNull>1</NotNull>
+      <Position>5</Position>
       <StoredType>varchar(255)|0s</StoredType>
     </column>
-    <index id="346" parent="334" name="email">
-      <ColNames>email</ColNames>
+    <column id="345" parent="334" name="role">
+      <DefaultExpression>&apos;benevole&apos;</DefaultExpression>
+      <Position>6</Position>
+      <StoredType>enum(&apos;benevole&apos;, &apos;administrateur&apos;)|0e</StoredType>
+    </column>
+    <index id="346" parent="334" name="PRIMARY">
+      <ColNames>id_benevole</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="347" parent="334" name="PRIMARY">
-      <ColNames>id_benevole</ColNames>
+    <index id="347" parent="334" name="email">
+      <ColNames>email</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
