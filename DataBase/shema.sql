@@ -85,3 +85,7 @@ VALUES (
            '$2y$10$hfi19kQMIcj4CG6lyoxuduVYYgw9STgaq.qTHqglmKN/28wbQCdGm', <--Leboss-->
            'administrateur'
        );
+
+ALTER TABLE evenement ADD COLUMN description TEXT;
+
+ALTER TABLE evenement ADD COLUMN titre VARCHAR(150) NOT NULL AFTER id_evenement;

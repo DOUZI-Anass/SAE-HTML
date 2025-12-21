@@ -1289,141 +1289,150 @@ test\\_%|schema||&apos;&apos;||UPDATE|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="357" parent="336" name="id_evenement">
-      <AutoIncrement>1</AutoIncrement>
+      <AutoIncrement>2</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="358" parent="336" name="lieu">
+    <column id="358" parent="336" name="titre">
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StoredType>varchar(100)|0s</StoredType>
+      <StoredType>varchar(150)|0s</StoredType>
     </column>
-    <column id="359" parent="336" name="date_evenement">
+    <column id="359" parent="336" name="lieu">
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StoredType>date|0s</StoredType>
+      <StoredType>varchar(100)|0s</StoredType>
     </column>
-    <column id="360" parent="336" name="budget">
+    <column id="360" parent="336" name="date_evenement">
       <NotNull>1</NotNull>
       <Position>4</Position>
+      <StoredType>date|0s</StoredType>
+    </column>
+    <column id="361" parent="336" name="budget">
+      <NotNull>1</NotNull>
+      <Position>5</Position>
       <StoredType>decimal(10,2 digit)|0s</StoredType>
     </column>
-    <index id="361" parent="336" name="PRIMARY">
+    <column id="362" parent="336" name="description">
+      <Position>6</Position>
+      <StoredType>text|0s</StoredType>
+    </column>
+    <index id="363" parent="336" name="PRIMARY">
       <ColNames>id_evenement</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="362" parent="336" name="PRIMARY">
+    <key id="364" parent="336" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="363" parent="337" name="id_evenement">
+    <column id="365" parent="337" name="id_evenement">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="364" parent="337" name="id_benevole">
+    <column id="366" parent="337" name="id_benevole">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="365" parent="337" name="date_inscription">
+    <column id="367" parent="337" name="date_inscription">
       <Position>3</Position>
       <StoredType>date|0s</StoredType>
     </column>
-    <foreign-key id="366" parent="337" name="fk_inscrit_evenement">
+    <foreign-key id="368" parent="337" name="fk_inscrit_evenement">
       <ColNames>id_evenement</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>id_evenement</RefColNames>
       <RefTableName>evenement</RefTableName>
     </foreign-key>
-    <foreign-key id="367" parent="337" name="fk_inscrit_benevole">
+    <foreign-key id="369" parent="337" name="fk_inscrit_benevole">
       <ColNames>id_benevole</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>id_benevole</RefColNames>
       <RefTableName>benevole</RefTableName>
     </foreign-key>
-    <index id="368" parent="337" name="PRIMARY">
+    <index id="370" parent="337" name="PRIMARY">
       <ColNames>id_evenement
 id_benevole</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="369" parent="337" name="fk_inscrit_benevole">
+    <index id="371" parent="337" name="fk_inscrit_benevole">
       <ColNames>id_benevole</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="370" parent="337" name="PRIMARY">
+    <key id="372" parent="337" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="371" parent="338" name="id_materiel">
+    <column id="373" parent="338" name="id_materiel">
       <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="372" parent="338" name="nom">
+    <column id="374" parent="338" name="nom">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>varchar(100)|0s</StoredType>
     </column>
-    <column id="373" parent="338" name="qt_materiel">
+    <column id="375" parent="338" name="qt_materiel">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <index id="374" parent="338" name="PRIMARY">
+    <index id="376" parent="338" name="PRIMARY">
       <ColNames>id_materiel</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="375" parent="338" name="PRIMARY">
+    <key id="377" parent="338" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="376" parent="339" name="id_evenement">
+    <column id="378" parent="339" name="id_evenement">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="377" parent="339" name="id_materiel">
+    <column id="379" parent="339" name="id_materiel">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="378" parent="339" name="quantite">
+    <column id="380" parent="339" name="quantite">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <foreign-key id="379" parent="339" name="fk_utilise_evenement">
+    <foreign-key id="381" parent="339" name="fk_utilise_evenement">
       <ColNames>id_evenement</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>id_evenement</RefColNames>
       <RefTableName>evenement</RefTableName>
     </foreign-key>
-    <foreign-key id="380" parent="339" name="fk_utilise_materiel">
+    <foreign-key id="382" parent="339" name="fk_utilise_materiel">
       <ColNames>id_materiel</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>id_materiel</RefColNames>
       <RefTableName>materiel</RefTableName>
     </foreign-key>
-    <index id="381" parent="339" name="PRIMARY">
+    <index id="383" parent="339" name="PRIMARY">
       <ColNames>id_evenement
 id_materiel</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="382" parent="339" name="fk_utilise_materiel">
+    <index id="384" parent="339" name="fk_utilise_materiel">
       <ColNames>id_materiel</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="383" parent="339" name="PRIMARY">
+    <key id="385" parent="339" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>

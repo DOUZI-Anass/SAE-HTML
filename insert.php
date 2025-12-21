@@ -29,54 +29,86 @@ $error_message = '';
 
 // --- 2. Détection du type de formulaire soumis ---
 
-// A. Traitement d'un NOUVEL ÉVÉNEMENT (Basé sur le champ 'titre_evenement')
-if (isset($_POST['titre_evenement'])) {
+// A. Traitement d'un NOUVEL ÉVÉNEMENT
+if (
+    isset(
+        $_POST['titre_evenement'],
+        $_POST['date_evenement'],
+        $_POST['lieu_evenement'],
+        $_POST['budget']
+    )
+) {
     $titre       = trim($_POST['titre_evenement']);
     $date        = $_POST['date_evenement'];
     $lieu        = trim($_POST['lieu_evenement']);
-    $description = trim($_POST['description_evenement']);
+    $budget      = $_POST['budget'];
+    $description = trim($_POST['description_evenement'] ?? '');
 
-    if ($titre === '' || $date === '') {
-        $error_message = "Erreur : Le titre et la date de l'événement sont obligatoires.";
+    if (
+        $titre === '' ||
+        $date === '' ||
+        $lieu === '' ||
+        !is_numeric($budget) ||
+        $budget < 0
+    ) {
+        $error_message = "Erreur : tous les champs obligatoires ne sont pas valides.";
     } else {
         try {
             $stmt = $pdo->prepare("
-                INSERT INTO evenement (titre, description, date_evenement, lieu)
-                VALUES (?, ?, ?, ?)
+                INSERT INTO evenement (titre, date_evenement, lieu, budget, description)
+                VALUES (?, ?, ?, ?, ?)
             ");
-            $stmt->execute([$titre, $description, $date, $lieu]);
-            $success_message = "L'événement '{$titre}' a été ajouté avec succès !";
+            $stmt->execute([$titre, $date, $lieu, $budget, $description]);
+
+            $success_message = "L'événement « {$titre} » a été ajouté avec succès.";
 
         } catch (PDOException $e) {
             $error_message = "Erreur BDD lors de l'ajout de l'événement.";
-            // En mode debug, vous pouvez afficher $e->getMessage();
+            // en debug : $e->getMessage();
         }
     }
 }
 
+$id_evenement = $pdo->lastInsertId();
+
+if (!empty($_POST['materiels']) && is_array($_POST['materiels'])) {
+
+    $stmtUtilise = $pdo->prepare("
+        INSERT INTO utilise (id_evenement, id_materiel, quantite)
+        VALUES (?, ?, ?)
+    ");
+
+    foreach ($_POST['materiels'] as $id_materiel) {
+        $id_materiel = (int)$id_materiel;
+        if ($id_materiel > 0) {
+            $stmtUtilise->execute([$id_evenement, $id_materiel, 1]); // quantite fixée à 1
+        }
+    }
+}
+
+
+
+
+
 // B. Traitement d'un NOUVEAU MATÉRIEL (Basé sur le champ 'nom_materiel')
 elseif (isset($_POST['nom_materiel'])) {
-    $nom         = trim($_POST['nom_materiel']);
-    $quantite    = (int)$_POST['quantite_materiel'];
-    $description = trim($_POST['description_materiel']);
+    $nom      = trim($_POST['nom_materiel'] ?? '');
+    $quantite = (int)($_POST['quantite_materiel'] ?? -1);
 
     if ($nom === '' || $quantite < 0) {
         $error_message = "Erreur : Le nom du matériel et la quantité sont obligatoires.";
     } else {
         try {
-            $stmt = $pdo->prepare("
-                INSERT INTO materiel (nom, description, quantite_disponible)
-                VALUES (?, ?, ?)
-            ");
-            $stmt->execute([$nom, $description, $quantite]);
-            $success_message = "Le matériel '{$nom}' a été ajouté avec succès !";
+            $stmt = $pdo->prepare("INSERT INTO materiel (nom, qt_materiel) VALUES (?, ?)");
+            $stmt->execute([$nom, $quantite]);
 
+            $success_message = "Le matériel '{$nom}' a été ajouté avec succès !";
         } catch (PDOException $e) {
-            $error_message = "Erreur BDD lors de l'ajout du matériel.";
-            // En mode debug, vous pouvez afficher $e->getMessage();
+            $error_message = "Erreur BDD lors de l'ajout du matériel : " . $e->getMessage();
         }
     }
 }
+
 
 
 // --- 3. Redirection vers la page d'administration avec un message de succès/erreur ---

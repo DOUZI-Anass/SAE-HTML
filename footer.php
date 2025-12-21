@@ -19,6 +19,10 @@
         <li><a href="#">Nos actions</a></li>
         <li><a href="#">Nos valeurs</a></li>
         <li><a href="#">Notre mission</a></li>
+          <?php if (!empty($_SESSION['benevole']) && (($_SESSION['benevole']['role'] ?? '') === 'administrateur')): ?>
+              <li><a href="admin.php">Admin</a></li>
+          <?php endif; ?>
+
       </ul>
     </div>
 
