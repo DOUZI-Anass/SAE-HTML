@@ -54,7 +54,11 @@ else if (isset($page) && $page === 'evenements') {
     <div class="collapse navbar-collapse" id="menu">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">LA FAGE</a>
-                <ul class="dropdown-menu"><li><a class="dropdown-item" href="quiSommeNous.php">Qui sommes-nous</a></li><li><a class="dropdown-item" href="evenements.php">Évènement</a></li></ul>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="quiSommeNous.php">Qui sommes-nous</a></li>
+                    <li><a class="dropdown-item" href="evenements.php">Évènement</a></li>
+                    <li><a class="dropdown-item" href="agenda.php">Agenda</a></li>
+                </ul>
             </li>
             <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">NOS IDEES</a>
 
