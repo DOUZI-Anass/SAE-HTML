@@ -22,6 +22,23 @@ require 'config.php';
 
 $materiels = $pdo->query("SELECT id_materiel, nom, qt_materiel FROM materiel ORDER BY nom")->fetchAll();
 
+// --- AJOUT : Récupérer la liste des inscrits triée par événement ---
+$sql_inscrits = "
+    SELECT 
+        e.id_evenement, 
+        e.titre AS titre_event, 
+        e.date_evenement,
+        b.id_benevole, 
+        b.nom, 
+        b.prenom, 
+        b.email
+    FROM inscrit i
+    JOIN evenement e ON i.id_evenement = e.id_evenement
+    JOIN benevole b ON i.id_benevole = b.id_benevole
+    ORDER BY e.date_evenement DESC, e.titre, b.nom
+";
+$inscrits = $pdo->query($sql_inscrits)->fetchAll();
+// ------------------------------------------------------------------
 ?>
 
 
@@ -127,7 +144,46 @@ $materiels = $pdo->query("SELECT id_materiel, nom, qt_materiel FROM materiel ORD
 
         </div>
 
+        <div class="row">
+            <div class="col-12">
+                <h2>Gestion des Inscriptions aux Événements</h2>
 
+                <?php if (empty($inscrits)): ?>
+                    <div class="alert alert-info">Aucune inscription pour le moment.</div>
+                <?php else: ?>
+
+                    <table class="table table-striped table-hover mt-3 shadow-sm">
+                        <thead class="table-dark">
+                        <tr>
+                            <th>Date</th>
+                            <th>Événement</th>
+                            <th>Bénévole</th>
+                            <th>Email</th>
+                            <th class="text-end">Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php foreach ($inscrits as $row): ?>
+                            <tr>
+                                <td><?= date('d/m/Y', strtotime($row['date_evenement'])) ?></td>
+                                <td class="fw-bold"><?= htmlspecialchars($row['titre_event']) ?></td>
+                                <td><?= htmlspecialchars($row['prenom'] . ' ' . $row['nom']) ?></td>
+                                <td><?= htmlspecialchars($row['email']) ?></td>
+                                <td class="text-end">
+                                    <a href="desinscription.php?id_evenement=<?= $row['id_evenement'] ?>&id_benevole=<?= $row['id_benevole'] ?>"
+                                       class="btn btn-sm btn-danger"
+                                       onclick="return confirm('Êtes-vous sûr de vouloir désinscrire ce bénévole de cet événement ?');">
+                                        Désinscrire
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                <?php endif; ?>
+            </div>
+        </div>
+        <br><br>
     </div>
 </div>
 
