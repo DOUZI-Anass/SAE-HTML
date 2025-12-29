@@ -2,8 +2,8 @@
 $page = 'autre';
 require 'header.php';
 ?>
-
-<section class="container py-5 mt-5">
+<body class="sante-page">
+    <section class="container py-5 mt-5">
     <h2 class="section-title text-center mb-4">Vivre en bonne Santé</h2>
     <p class="lead text-center">
         Il est aujourd’hui avéré que les questions de santé sont directement liées à la question du bien-être et à sa promotion. C’est la raison pour laquelle la FAGE mène des
@@ -15,13 +15,13 @@ require 'header.php';
 
 
 <!-- SECTION CONTENU -->
-<section class="container py-5 mt-5">
+    <section class="container py-5 mt-5">
 
-    <div class="row justify-content-center centrale">
-        <div class="col-12 col-md-8 text-center">
-            <h2 class="fw-bold text-uppercase text-primary mb-3">Nos Campagnes</h2>
+        <div class="row justify-content-center centrale mb-4">
+            <div class="col-12 text-center">
+                <h2 class="fw-bold text-uppercase text-primary">Nos Campagnes</h2>
+            </div>
         </div>
-    </div>
 
     <!-- Bloc 1 -->
     <div class="row align-items-center mb-5">

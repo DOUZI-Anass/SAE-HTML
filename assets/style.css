@@ -373,6 +373,77 @@ section .container {
     #searchInput { width: 100%; margin-top: 5px; }
     #searchBtn { margin: 20px 10px; }
 }
+/*==================================================
+=   STYLE COMMUN : QUI SOMMES-NOUS & SANTÉ        =
+==================================================*/
+
+/* S'applique aux deux pages grâce au body class ou à la structure container */
+.qsn-page, .sante-page {
+    background-color: #24c500; /* Fond de page gris très léger pour faire ressortir le blanc */
+}
+
+/* LE BLOC BLANC UNIQUE (Comme sur la capture 1) */
+section.container.py-5.mt-5 {
+    background-color: #ffffff !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+    border-radius: 15px !important;
+    padding: 40px !important;
+    margin-top: 100px !important;
+    margin-bottom: 20px !important;
+    max-width: 1140px; /* Largeur standard Bootstrap */
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+section.container.py-5.mt-5:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.18);
+}
+/* RECTIFICATION DE LA CLASSE CENTRALE */
+/* On supprime les 1000px et les 160px de marge qui cassent tout */
+.centrale {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    justify-content: center !important;
+}
+
+/* TITRES : On remet le bleu vif de la FAGE */
+.text-primary, .section-title {
+    color: var(--fage-blue) !important;
+}
+
+/* NETTOYAGE DES COLONNES (Supprime les boîtes blanches individuelles de la capture 2) */
+.qsn-page .row .col-md-6,
+.vivre-sante-page .row .col-md-6 {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    padding: 20px !important;
+}
+
+/* IMAGES */
+.imgM {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.imgM:hover {
+    transform: scale(1.03) !important;
+}
+/* Style uniquement pour la zone de texte */
+section .row .col-md-6.mb-4.mb-md-0 {
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 25px;
+    background-color: #fff;
+}
+section .row .col-md-6.mb-4.mb-md-0:hover {
+    transform: translateY(-1px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
 /*=============================
 =      QUI SOMME NOUS PAGE     =
 =============================*/
@@ -382,60 +453,6 @@ section .container {
     background-color: #009DC5 !important;
     transition: none !important;
 }
-
-.qsn-page .imgM {
-    width: 500px;
-    transition: transform 0.3s ease;
-}
-
-.qsn-page .imgM:hover {
-    transform: scale(1.03);
-}
-
-.qsn-page .imgM.test {
-    width: 400px;
-}
-
-.qsn-page section.container h2 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    color: #009DC5 !important;
-}
-
-.qsn-page section.container p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #333;
-}
-
-/* Bloc principal "Qui sommes-nous ?" */
-.qsn-page section.container.py-5.mt-5 {
-    background-color: #ffffff;
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
-    border-radius: 20px;
-    padding: 50px 40px;
-    margin-top: 100px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.qsn-page section.container.py-5.mt-5:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.18);
-}
-
-/* Style uniquement pour la zone de texte */
-.qsn-page section .row .col-md-6.mb-4.mb-md-0 {
-    border: none;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    padding: 25px;
-    background-color: #fff;
-}
-.qsn-page section .row .col-md-6.mb-4.mb-md-0:hover {
-    transform: translateY(-1px);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
-}
-
 /* Adaptation responsive */
 @media (max-width: 992px) {
     .qsn-page .hero-quiSommeNous {
@@ -480,12 +497,6 @@ section .container {
     .qsn-page section.container p {
         font-size: 1rem;
     }
-}
-
-.qsn-page section .centrale {
-    width: 1000px;
-    justify-content: center;
-    margin-left: 160px;
 }
 
 /* Bloc téléchargement PDF */
