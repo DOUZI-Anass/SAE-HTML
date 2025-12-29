@@ -119,5 +119,5 @@ require 'header.php';
         <a href="https://www.helloasso.com/associations/federation-des-associations-generales-etudiantes-fage/formulaires/1" class="btn btn-donner mt-4">Faire un don</a>
     </div>
 </section>
-
+//
 <?php require 'footer.php'?>

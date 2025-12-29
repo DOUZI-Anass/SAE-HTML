@@ -63,7 +63,7 @@ require 'header.php';
         calendar.render();
     });
 
-    // fonction globale appelée par le bouton
+    // fonction globale appelée par le bouton.
     function inscrire(idEvenement) {
         fetch('inscription_evenement.php', {
             method: 'POST',

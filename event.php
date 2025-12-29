@@ -26,3 +26,4 @@ foreach ($rows as $r) {
 }
 
 echo json_encode($events, JSON_UNESCAPED_UNICODE);
+//

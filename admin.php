@@ -135,7 +135,7 @@ $inscrits = $pdo->query($sql_inscrits)->fetchAll();
                     </div>
 
                 <?php endif; ?>
-
+//
 
 
 
