@@ -72,10 +72,13 @@ else if (isset($page) && $page === 'evenements') {
         </ul>
 
 
+
         <?php if (isset($_SESSION['benevole'])): ?>
             <span class="navbar-text text-white ms-3">
         Bonjour, <?= htmlspecialchars($_SESSION['benevole']['prenom']) ?>
     </span>
+            <a href="mon_compte.php" class="btn btn-outline-light btn-sm ms-2">Mon espace</a>
+
             <a href="deconnexion.php" class="btn btn-outline-light btn-sm ms-2">Déconnexion</a>
         <?php else: ?>
             <a href="connexion.php" class="btn btn-outline-light btn-sm ms-2">Connexion</a>

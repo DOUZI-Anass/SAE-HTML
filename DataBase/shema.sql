@@ -89,3 +89,44 @@ VALUES (
 ALTER TABLE evenement ADD COLUMN description TEXT;
 
 ALTER TABLE evenement ADD COLUMN titre VARCHAR(150) NOT NULL AFTER id_evenement;
+
+INSERT INTO materiel (nom, qt_materiel) VALUES
+                                            ('Chaises', 200),
+                                            ('Tables', 50),
+                                            ('Microphones', 10),
+                                            ('Enceintes', 6),
+                                            ('Vidéoprojecteurs', 5),
+                                            ('Rallonges électriques', 30),
+                                            ('Multiprises', 25),
+                                            ('Ordinateurs portables', 8),;
+
+
+INSERT INTO evenement (titre, lieu, date_evenement, budget, description) VALUES
+                                                                             (
+                                                                                 'Formation des nouveaux bénévoles',
+                                                                                 'Paris',
+                                                                                 '2026-01-24',
+                                                                                 2500.00,
+                                                                                 'Journée de formation destinée aux nouveaux bénévoles afin de leur présenter les valeurs, missions et outils de la FAGE.'
+                                                                             ),
+                                                                             (
+                                                                                 'Congrès National de la FAGE',
+                                                                                 'Lyon',
+                                                                                 '2026-01-20',
+                                                                                 12000.00,
+                                                                                 'Grand rassemblement annuel des associations membres pour débattre et définir les orientations nationales.'
+                                                                             ),
+                                                                             (
+                                                                                 'Atelier Santé Mentale',
+                                                                                 'Toulouse',
+                                                                                 '2026-01-12',
+                                                                                 1500.00,
+                                                                                 'Atelier animé par des professionnels pour sensibiliser à la santé mentale des étudiants.'
+                                                                             ),
+                                                                             (
+                                                                                 'Forum Engagement Étudiant',
+                                                                                 'Lille',
+                                                                                 '2026-01-02',
+                                                                                 3000.00,
+                                                                                 'Forum permettant aux étudiants de découvrir les opportunités d’engagement associatif.'
+                                                                             );
