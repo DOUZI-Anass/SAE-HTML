@@ -15,9 +15,6 @@
 /*=============================
 =           HEADER            =
 =============================*/
-/* =============================
-=           HEADER            =
-============================= */
 
 /* Par défaut : navbar BLEUE sur toutes les pages */
 .navbar {
@@ -373,9 +370,9 @@ section .container {
     #searchInput { width: 100%; margin-top: 5px; }
     #searchBtn { margin: 20px 10px; }
 }
-/*==================================================
-=   STYLE COMMUN : QUI SOMMES-NOUS & SANTÉ        =
-==================================================*/
+/*================================================================================
+=   STYLE COMMUN : QUI SOMMES-NOUS, SANTÉ, FINANCER, LUTTE PRECARITE et ENGAGEMENTS   =
+=================================================================================*/
 
 /* S'applique aux deux pages grâce au body class ou à la structure container */
 .qsn-page, .sante-page {

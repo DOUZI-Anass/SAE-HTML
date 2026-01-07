@@ -64,12 +64,15 @@ if (isset($page)) {
             <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">NOS IDÉES</a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="actualites.php">Actualités</a></li>
+                    <li><a class="dropdown-item" href="engagements.php">Nos engagements</a></li>
                 </ul>
             </li>
 
             <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">INNOVATION SOCIALE</a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="vivreEnBonneSante.php">Vivre en bonne santé</a></li>
+                    <li><a class="dropdown-item" href="precarite.php">Lutte contre la précarité</a></li>
+
                 </ul>
             </li>
 
