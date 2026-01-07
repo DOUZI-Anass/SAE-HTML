@@ -974,7 +974,7 @@ section .row .col-md-6.mb-4.mb-md-0:hover {
     border: 1px solid rgba(0,0,0,0.12);
     border-radius: 14px;
     padding: 10px;
-    background: rgba(255,255,255,0.9);
+    background: #2ab0cc;
 }
 
 .materiel-select {
@@ -1001,4 +1001,169 @@ section .row .col-md-6.mb-4.mb-md-0:hover {
 .materiel-select option:checked {
     background: rgba(0, 157, 197, 0.25);
     color: #000;
+}
+.Article,.Actualité {
+    margin-top: 150px;
+    margin-bottom: 50px;
+}
+/* =============================
+   STYLES POUR ACTUALITÉS & ARTICLES
+============================= */
+
+/* Soulignement stylisé pour les grands titres */
+.actualites-page .section-title,
+.article-page .section-title,
+.section-title-article {
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    font-family: 'HelveticaBold', sans-serif;
+    color: var(--fage-blue);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* La petite barre bleue sous le titre */
+.actualites-page .section-title::after,
+.article-page .section-title::after,
+.section-title-article::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 80px; /* Longueur de la barre */
+    height: 4px; /* Épaisseur */
+    background-color: var(--fage-blue);
+    border-radius: 2px;
+}
+
+/* Style spécifique pour le contenu de l'article (lecture plus agréable) */
+.article-content {
+    font-family: 'Inter', sans-serif; /* Ou ta police de texte standard */
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #333;
+    text-align: justify;
+}
+
+/* Petit effet au survol des cartes d'actualités */
+.card-actu {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.card-actu:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 157, 197, 0.15);
+}
+/*Chatboot*/
+#chat-input, .message {
+    color: #333 !important; /* Force le texte en gris foncé */
+}
+
+#chatbot-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--fage-blue);
+    color: white !important; /* Texte du bouton en blanc */
+    padding: 15px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 9999;
+    font-weight: bold;
+    transition: transform 0.3s;
+    font-family: sans-serif;
+}
+#chatbot-btn:hover { transform: scale(1.05); }
+
+#chat-window {
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 350px;
+    height: 450px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+    z-index: 9999;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: 'Helvetica', sans-serif;
+}
+
+.chat-header {
+    background-color: var(--fage-blue);
+    color: white !important;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+.close-chat { cursor: pointer; font-size: 1.5rem; }
+
+.chat-body {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message {
+    padding: 10px 15px;
+    border-radius: 15px;
+    max-width: 80%;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Bot = Fond gris, texte noir */
+.message.bot {
+    background-color: #e9ecef;
+    align-self: flex-start;
+    border-bottom-left-radius: 2px;
+    color: #333 !important;
+}
+
+/* User = Fond bleu, texte blanc */
+.message.user {
+    background-color: var(--fage-blue);
+    color: white !important;
+    align-self: flex-end;
+    border-bottom-right-radius: 2px;
+}
+
+.chat-footer {
+    padding: 10px;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 10px;
+    background: white;
+}
+
+#chat-input {
+    flex: 1;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 8px 15px;
+    outline: none;
+    background: white;
+}
+
+.chat-footer button {
+    background: var(--fage-blue);
+    color: white;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
 }

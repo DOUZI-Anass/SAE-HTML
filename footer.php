@@ -1,6 +1,7 @@
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-container">
+      <?php include 'chatbot.php'; ?>
 
     <!-- 🔹 LOGO -->
     <div class="footer-logo">

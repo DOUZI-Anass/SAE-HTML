@@ -75,14 +75,22 @@ CREATE TABLE IF NOT EXISTS utilise (
 
 ALTER TABLE benevole
     ADD COLUMN role ENUM('benevole', 'administrateur')
-DEFAULT 'benevole';
+DEFAULT 'administrateur';
 
 INSERT INTO benevole (nom, prenom, email, mdp, role)
 VALUES (
            'Admin',
            'FAGE',
            'admin@fage.fr',
-           '$2y$10$hfi19kQMIcj4CG6lyoxuduVYYgw9STgaq.qTHqglmKN/28wbQCdGm', <--Leboss-->
+           '$2y$10$hfi19kQMIcj4CG6lyoxuduVYYgw9STgaq.qTHqglmKN/28wbQCdGm', /* <--Leboss-->*/
+           'administrateur'
+       );
+INSERT INTO benevole (nom, prenom, email, mdp, role)
+VALUES (
+           'king',
+           'Maitre',
+           'King@f.fr',
+           '$2y$10$hfi19kQMIcj4CG6lyoxuduVYYgw9STgaq.qTHqglmKN/28wbQCdGm', /* <--Leboss-->*/
            'administrateur'
        );
 
@@ -98,7 +106,7 @@ INSERT INTO materiel (nom, qt_materiel) VALUES
                                             ('Vidéoprojecteurs', 5),
                                             ('Rallonges électriques', 30),
                                             ('Multiprises', 25),
-                                            ('Ordinateurs portables', 8),;
+                                            ('Ordinateurs portables', 8);
 
 
 INSERT INTO evenement (titre, lieu, date_evenement, budget, description) VALUES

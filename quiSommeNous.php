@@ -89,6 +89,32 @@ require 'header.php';
         </div>
     </div>
 </div>
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="section-title text-center mb-5">Où nous trouver ?</h2>
+        <div class="row align-items-center">
+            <div class="col-md-5 mb-4 mb-md-0">
+                <h3>Siège de la FAGE</h3>
+                <p class="lead">Venez nous rencontrer !</p>
+                <p><i class="fa-solid fa-location-dot text-primary"></i> 79 Rue Périer, 92120 Montrouge</p>
+                <p><i class="fa-solid fa-phone text-primary"></i> 01 40 33 70 70</p>
+                <p><i class="fa-solid fa-envelope text-primary"></i> contact@fage.org</p>
+            </div>
+            <div class="col-md-7">
+                <div class="shadow rounded overflow-hidden">
+                    <iframe
+                            width="100%"
+                            height="350"
+                            frameborder="0"
+                            style="border:0"
+                            src="https://maps.google.com/maps?q=79+Rue+Perier+92120+Montrouge&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <br><br><br>
 <?php require 'footer.php'; ?>
 </body>

@@ -2,137 +2,8 @@
 <dataSource name="Data_Fage_Back">
   <database-model serializer="dbm" dbms="MARIADB" family-id="MARIADB" format-version="4.53">
     <root id="1">
-      <DefaultCasing>lower/lower</DefaultCasing>
       <DefaultEngine>InnoDB</DefaultEngine>
-      <Grants>|root||root|127.0.0.1|ALTER|G
-|root||root|::1|ALTER|G
-|root||root|localhost|ALTER|G
-|root||root|127.0.0.1|ALTER ROUTINE|G
-|root||root|::1|ALTER ROUTINE|G
-|root||root|localhost|ALTER ROUTINE|G
-|root||root|127.0.0.1|CREATE|G
-|root||root|::1|CREATE|G
-|root||root|localhost|CREATE|G
-|root||root|127.0.0.1|CREATE ROUTINE|G
-|root||root|::1|CREATE ROUTINE|G
-|root||root|localhost|CREATE ROUTINE|G
-|root||root|127.0.0.1|CREATE TABLESPACE|G
-|root||root|::1|CREATE TABLESPACE|G
-|root||root|localhost|CREATE TABLESPACE|G
-|root||root|127.0.0.1|CREATE TEMPORARY TABLES|G
-|root||root|::1|CREATE TEMPORARY TABLES|G
-|root||root|localhost|CREATE TEMPORARY TABLES|G
-|root||root|127.0.0.1|CREATE USER|G
-|root||root|::1|CREATE USER|G
-|root||root|localhost|CREATE USER|G
-|root||root|127.0.0.1|CREATE VIEW|G
-|root||root|::1|CREATE VIEW|G
-|root||root|localhost|CREATE VIEW|G
-|root||root|127.0.0.1|DELETE|G
-|root||root|::1|DELETE|G
-|root||root|localhost|DELETE|G
-|root||root|127.0.0.1|DELETE HISTORY|G
-|root||root|::1|DELETE HISTORY|G
-|root||root|localhost|DELETE HISTORY|G
-|root||root|127.0.0.1|DROP|G
-|root||root|::1|DROP|G
-|root||root|localhost|DROP|G
-|root||root|127.0.0.1|EVENT|G
-|root||root|::1|EVENT|G
-|root||root|localhost|EVENT|G
-|root||root|127.0.0.1|EXECUTE|G
-|root||root|::1|EXECUTE|G
-|root||root|localhost|EXECUTE|G
-|root||root|127.0.0.1|FILE|G
-|root||root|::1|FILE|G
-|root||root|localhost|FILE|G
-|root||root|127.0.0.1|INDEX|G
-|root||root|::1|INDEX|G
-|root||root|localhost|INDEX|G
-|root||root|127.0.0.1|INSERT|G
-|root||root|::1|INSERT|G
-|root||root|localhost|INSERT|G
-|root||root|127.0.0.1|LOCK TABLES|G
-|root||root|::1|LOCK TABLES|G
-|root||root|localhost|LOCK TABLES|G
-|root||root|127.0.0.1|PROCESS|G
-|root||root|::1|PROCESS|G
-|root||root|localhost|PROCESS|G
-|root||root|127.0.0.1|REFERENCES|G
-|root||root|::1|REFERENCES|G
-|root||root|localhost|REFERENCES|G
-|root||root|127.0.0.1|RELOAD|G
-|root||root|::1|RELOAD|G
-|root||root|localhost|RELOAD|G
-|root||root|127.0.0.1|REPLICATION CLIENT|G
-|root||root|::1|REPLICATION CLIENT|G
-|root||root|localhost|REPLICATION CLIENT|G
-|root||root|127.0.0.1|REPLICATION SLAVE|G
-|root||root|::1|REPLICATION SLAVE|G
-|root||root|localhost|REPLICATION SLAVE|G
-|root||root|127.0.0.1|SELECT|G
-|root||root|::1|SELECT|G
-|root||root|localhost|SELECT|G
-|root||root|127.0.0.1|SHOW DATABASES|G
-|root||root|::1|SHOW DATABASES|G
-|root||root|localhost|SHOW DATABASES|G
-|root||root|127.0.0.1|SHOW VIEW|G
-|root||root|::1|SHOW VIEW|G
-|root||root|localhost|SHOW VIEW|G
-|root||root|127.0.0.1|SHUTDOWN|G
-|root||root|::1|SHUTDOWN|G
-|root||root|localhost|SHUTDOWN|G
-|root||root|127.0.0.1|SUPER|G
-|root||root|::1|SUPER|G
-|root||root|localhost|SUPER|G
-|root||root|127.0.0.1|TRIGGER|G
-|root||root|::1|TRIGGER|G
-|root||root|localhost|TRIGGER|G
-|root||root|127.0.0.1|UPDATE|G
-|root||root|::1|UPDATE|G
-|root||root|localhost|UPDATE|G
-|root||root|127.0.0.1|grant option|G
-|root||root|::1|grant option|G
-|root||root|localhost|grant option|G
-phpmyadmin|schema||pma|localhost|DELETE|G
-phpmyadmin|schema||pma|localhost|INSERT|G
-phpmyadmin|schema||pma|localhost|SELECT|G
-phpmyadmin|schema||pma|localhost|UPDATE|G
-test|schema||&apos;&apos;||ALTER|G
-test|schema||&apos;&apos;||CREATE|G
-test|schema||&apos;&apos;||CREATE ROUTINE|G
-test|schema||&apos;&apos;||CREATE TEMPORARY TABLES|G
-test|schema||&apos;&apos;||CREATE VIEW|G
-test|schema||&apos;&apos;||DELETE|G
-test|schema||&apos;&apos;||DELETE HISTORY|G
-test|schema||&apos;&apos;||DROP|G
-test|schema||&apos;&apos;||EVENT|G
-test|schema||&apos;&apos;||INDEX|G
-test|schema||&apos;&apos;||INSERT|G
-test|schema||&apos;&apos;||LOCK TABLES|G
-test|schema||&apos;&apos;||REFERENCES|G
-test|schema||&apos;&apos;||SELECT|G
-test|schema||&apos;&apos;||SHOW VIEW|G
-test|schema||&apos;&apos;||TRIGGER|G
-test|schema||&apos;&apos;||UPDATE|G
-test\\_%|schema||&apos;&apos;||ALTER|G
-test\\_%|schema||&apos;&apos;||CREATE|G
-test\\_%|schema||&apos;&apos;||CREATE ROUTINE|G
-test\\_%|schema||&apos;&apos;||CREATE TEMPORARY TABLES|G
-test\\_%|schema||&apos;&apos;||CREATE VIEW|G
-test\\_%|schema||&apos;&apos;||DELETE|G
-test\\_%|schema||&apos;&apos;||DELETE HISTORY|G
-test\\_%|schema||&apos;&apos;||DROP|G
-test\\_%|schema||&apos;&apos;||EVENT|G
-test\\_%|schema||&apos;&apos;||INDEX|G
-test\\_%|schema||&apos;&apos;||INSERT|G
-test\\_%|schema||&apos;&apos;||LOCK TABLES|G
-test\\_%|schema||&apos;&apos;||REFERENCES|G
-test\\_%|schema||&apos;&apos;||SELECT|G
-test\\_%|schema||&apos;&apos;||SHOW VIEW|G
-test\\_%|schema||&apos;&apos;||TRIGGER|G
-test\\_%|schema||&apos;&apos;||UPDATE|G</Grants>
-      <ServerVersion>10.4.32</ServerVersion>
+      <ServerVersion>12.1.2</ServerVersion>
     </root>
     <collation id="2" parent="1" name="armscii8_bin">
       <Charset>armscii8</Charset>
@@ -1143,7 +1014,7 @@ test\\_%|schema||&apos;&apos;||UPDATE|G</Grants>
     <schema id="324" parent="1" name="data_fage_back">
       <AutoIntrospectionLevel>3</AutoIntrospectionLevel>
       <LastIntrospectionLevel>3</LastIntrospectionLevel>
-      <LastIntrospectionLocalTimestamp>2025-12-18.18:26:43</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2026-01-05.08:46:15</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_general_ci</CollationName>
     </schema>
     <schema id="325" parent="1" name="information_schema">
@@ -1173,266 +1044,339 @@ test\\_%|schema||&apos;&apos;||UPDATE|G</Grants>
     <user id="333" parent="1" name="root">
       <Host>localhost</Host>
     </user>
-    <table id="334" parent="324" name="benevole">
+    <table id="334" parent="324" name="article">
       <DetailsLevel>3</DetailsLevel>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="335" parent="324" name="document">
+    <table id="335" parent="324" name="benevole">
       <DetailsLevel>3</DetailsLevel>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="336" parent="324" name="evenement">
+    <table id="336" parent="324" name="document">
       <DetailsLevel>3</DetailsLevel>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="337" parent="324" name="inscrit">
+    <table id="337" parent="324" name="evenement">
       <DetailsLevel>3</DetailsLevel>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="338" parent="324" name="materiel">
+    <table id="338" parent="324" name="inscrit">
       <DetailsLevel>3</DetailsLevel>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="339" parent="324" name="utilise">
+    <table id="339" parent="324" name="media">
       <DetailsLevel>3</DetailsLevel>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <column id="340" parent="334" name="id_benevole">
-      <AutoIncrement>5</AutoIncrement>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StoredType>int(11)|0s</StoredType>
-    </column>
-    <column id="341" parent="334" name="nom">
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StoredType>varchar(100)|0s</StoredType>
-    </column>
-    <column id="342" parent="334" name="prenom">
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-      <StoredType>varchar(100)|0s</StoredType>
-    </column>
-    <column id="343" parent="334" name="email">
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-      <StoredType>varchar(150)|0s</StoredType>
-    </column>
-    <column id="344" parent="334" name="mdp">
-      <NotNull>1</NotNull>
-      <Position>5</Position>
-      <StoredType>varchar(255)|0s</StoredType>
-    </column>
-    <column id="345" parent="334" name="role">
-      <DefaultExpression>&apos;benevole&apos;</DefaultExpression>
-      <Position>6</Position>
-      <StoredType>enum(&apos;benevole&apos;, &apos;administrateur&apos;)|0e</StoredType>
-    </column>
-    <index id="346" parent="334" name="PRIMARY">
-      <ColNames>id_benevole</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="347" parent="334" name="email">
-      <ColNames>email</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="348" parent="334" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <key id="349" parent="334" name="email">
-      <UnderlyingIndexName>email</UnderlyingIndexName>
-    </key>
-    <column id="350" parent="335" name="num_doc">
+    <table id="340" parent="324" name="newsletter">
+      <DetailsLevel>3</DetailsLevel>
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </table>
+    <column id="341" parent="334" name="id_article">
       <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="351" parent="335" name="type_doc">
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StoredType>varchar(50)|0s</StoredType>
-    </column>
-    <column id="352" parent="335" name="id_evenement">
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-      <StoredType>int(11)|0s</StoredType>
-    </column>
-    <foreign-key id="353" parent="335" name="fk_document_evenement">
-      <ColNames>id_evenement</ColNames>
-      <OnDelete>cascade</OnDelete>
-      <RefColNames>id_evenement</RefColNames>
-      <RefTableName>evenement</RefTableName>
-    </foreign-key>
-    <index id="354" parent="335" name="PRIMARY">
-      <ColNames>num_doc</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="355" parent="335" name="fk_document_evenement">
-      <ColNames>id_evenement</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="356" parent="335" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="357" parent="336" name="id_evenement">
-      <AutoIncrement>2</AutoIncrement>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StoredType>int(11)|0s</StoredType>
-    </column>
-    <column id="358" parent="336" name="titre">
+    <column id="342" parent="334" name="titre">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>varchar(150)|0s</StoredType>
     </column>
-    <column id="359" parent="336" name="lieu">
+    <column id="343" parent="334" name="contenu">
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StoredType>varchar(100)|0s</StoredType>
-    </column>
-    <column id="360" parent="336" name="date_evenement">
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-      <StoredType>date|0s</StoredType>
-    </column>
-    <column id="361" parent="336" name="budget">
-      <NotNull>1</NotNull>
-      <Position>5</Position>
-      <StoredType>decimal(10,2 digit)|0s</StoredType>
-    </column>
-    <column id="362" parent="336" name="description">
-      <Position>6</Position>
       <StoredType>text|0s</StoredType>
     </column>
-    <index id="363" parent="336" name="PRIMARY">
-      <ColNames>id_evenement</ColNames>
+    <column id="344" parent="334" name="date_publication">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <column id="345" parent="334" name="id_auteur">
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="346" parent="334" name="image">
+      <Position>6</Position>
+      <StoredType>varchar(255)|0s</StoredType>
+    </column>
+    <foreign-key id="347" parent="334" name="fk_article_auteur">
+      <ColNames>id_auteur</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>id_benevole</RefColNames>
+      <RefTableName>benevole</RefTableName>
+    </foreign-key>
+    <index id="348" parent="334" name="PRIMARY">
+      <ColNames>id_article</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="364" parent="336" name="PRIMARY">
+    <index id="349" parent="334" name="fk_article_auteur">
+      <ColNames>id_auteur</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="350" parent="334" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="365" parent="337" name="id_evenement">
+    <column id="351" parent="335" name="rôle">
+      <Position>1</Position>
+      <StoredType>varchar(20)|0s</StoredType>
+    </column>
+    <column id="352" parent="335" name="prenom">
+      <Position>2</Position>
+      <StoredType>varchar(20)|0s</StoredType>
+    </column>
+    <column id="353" parent="335" name="email">
+      <Position>3</Position>
+      <StoredType>varchar(20)|0s</StoredType>
+    </column>
+    <column id="354" parent="335" name="id_benevole">
+      <AutoIncrement>10</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="355" parent="335" name="nom">
+      <Position>5</Position>
+      <StoredType>varchar(20)|0s</StoredType>
+    </column>
+    <column id="356" parent="335" name="mdp">
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+      <StoredType>varchar(255)|0s</StoredType>
+    </column>
+    <index id="357" parent="335" name="email">
+      <ColNames>email</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="358" parent="335" name="PRIMARY">
+      <ColNames>id_benevole</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="359" parent="335" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <key id="360" parent="335" name="email">
+      <UnderlyingIndexName>email</UnderlyingIndexName>
+    </key>
+    <column id="361" parent="336" name="num_doc">
+      <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="366" parent="337" name="id_benevole">
+    <column id="362" parent="336" name="nom_doc">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>varchar(150)|0s</StoredType>
+    </column>
+    <column id="363" parent="336" name="type_doc">
+      <Position>3</Position>
+      <StoredType>varchar(50)|0s</StoredType>
+    </column>
+    <column id="364" parent="336" name="chemin">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredType>varchar(255)|0s</StoredType>
+    </column>
+    <column id="365" parent="336" name="date_ajout">
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+      <StoredType>date|0s</StoredType>
+    </column>
+    <column id="366" parent="336" name="id_evenement">
+      <Position>6</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="367" parent="336" name="titre">
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+      <StoredType>varchar(150)|0s</StoredType>
+    </column>
+    <column id="368" parent="336" name="fichier">
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+      <StoredType>varchar(255)|0s</StoredType>
+    </column>
+    <index id="369" parent="336" name="PRIMARY">
+      <ColNames>num_doc</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="370" parent="336" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="371" parent="337" name="id_evenement">
+      <AutoIncrement>1</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="372" parent="337" name="titre">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>varchar(150)|0s</StoredType>
+    </column>
+    <column id="373" parent="337" name="lieu">
+      <Position>3</Position>
+      <StoredType>varchar(100)|0s</StoredType>
+    </column>
+    <column id="374" parent="337" name="date_evenement">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredType>date|0s</StoredType>
+    </column>
+    <column id="375" parent="337" name="budget">
+      <Position>5</Position>
+      <StoredType>decimal(10,2 digit)|0s</StoredType>
+    </column>
+    <column id="376" parent="337" name="description">
+      <Position>6</Position>
+      <StoredType>text|0s</StoredType>
+    </column>
+    <index id="377" parent="337" name="PRIMARY">
+      <ColNames>id_evenement</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="378" parent="337" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="379" parent="338" name="id_evenement">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="380" parent="338" name="id_benevole">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="367" parent="337" name="date_inscription">
+    <column id="381" parent="338" name="date_inscription">
+      <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>date|0s</StoredType>
     </column>
-    <foreign-key id="368" parent="337" name="fk_inscrit_evenement">
+    <foreign-key id="382" parent="338" name="fk_inscrit_evenement">
       <ColNames>id_evenement</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>id_evenement</RefColNames>
       <RefTableName>evenement</RefTableName>
     </foreign-key>
-    <foreign-key id="369" parent="337" name="fk_inscrit_benevole">
+    <foreign-key id="383" parent="338" name="fk_inscrit_benevole">
       <ColNames>id_benevole</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>id_benevole</RefColNames>
       <RefTableName>benevole</RefTableName>
     </foreign-key>
-    <index id="370" parent="337" name="PRIMARY">
+    <index id="384" parent="338" name="PRIMARY">
       <ColNames>id_evenement
 id_benevole</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="371" parent="337" name="fk_inscrit_benevole">
+    <index id="385" parent="338" name="fk_inscrit_benevole">
       <ColNames>id_benevole</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="372" parent="337" name="PRIMARY">
+    <key id="386" parent="338" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="373" parent="338" name="id_materiel">
+    <column id="387" parent="339" name="id_media">
       <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="374" parent="338" name="nom">
+    <column id="388" parent="339" name="nom_fichier">
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StoredType>varchar(100)|0s</StoredType>
+      <StoredType>varchar(255)|0s</StoredType>
     </column>
-    <column id="375" parent="338" name="qt_materiel">
-      <NotNull>1</NotNull>
+    <column id="389" parent="339" name="type_media">
       <Position>3</Position>
+      <StoredType>varchar(50)|0s</StoredType>
+    </column>
+    <column id="390" parent="339" name="chemin">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredType>varchar(255)|0s</StoredType>
+    </column>
+    <column id="391" parent="339" name="id_article">
+      <Position>5</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <index id="376" parent="338" name="PRIMARY">
-      <ColNames>id_materiel</ColNames>
+    <foreign-key id="392" parent="339" name="fk_media_article">
+      <ColNames>id_article</ColNames>
+      <OnDelete>set-null</OnDelete>
+      <RefColNames>id_article</RefColNames>
+      <RefTableName>article</RefTableName>
+    </foreign-key>
+    <index id="393" parent="339" name="PRIMARY">
+      <ColNames>id_media</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="377" parent="338" name="PRIMARY">
+    <index id="394" parent="339" name="fk_media_article">
+      <ColNames>id_article</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="395" parent="339" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="378" parent="339" name="id_evenement">
+    <column id="396" parent="340" name="id_newsletter">
+      <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="379" parent="339" name="id_materiel">
+    <column id="397" parent="340" name="sujet">
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StoredType>int(11)|0s</StoredType>
+      <StoredType>varchar(150)|0s</StoredType>
     </column>
-    <column id="380" parent="339" name="quantite">
+    <column id="398" parent="340" name="contenu">
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StoredType>int(11)|0s</StoredType>
+      <StoredType>text|0s</StoredType>
     </column>
-    <foreign-key id="381" parent="339" name="fk_utilise_evenement">
-      <ColNames>id_evenement</ColNames>
-      <OnDelete>cascade</OnDelete>
-      <RefColNames>id_evenement</RefColNames>
-      <RefTableName>evenement</RefTableName>
-    </foreign-key>
-    <foreign-key id="382" parent="339" name="fk_utilise_materiel">
-      <ColNames>id_materiel</ColNames>
-      <OnDelete>cascade</OnDelete>
-      <RefColNames>id_materiel</RefColNames>
-      <RefTableName>materiel</RefTableName>
-    </foreign-key>
-    <index id="383" parent="339" name="PRIMARY">
-      <ColNames>id_evenement
-id_materiel</ColNames>
+    <column id="399" parent="340" name="date_envoi">
+      <Position>4</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <column id="400" parent="340" name="statut">
+      <Position>5</Position>
+      <StoredType>varchar(30)|0s</StoredType>
+    </column>
+    <index id="401" parent="340" name="PRIMARY">
+      <ColNames>id_newsletter</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="384" parent="339" name="fk_utilise_materiel">
-      <ColNames>id_materiel</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="385" parent="339" name="PRIMARY">
+    <key id="402" parent="340" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>

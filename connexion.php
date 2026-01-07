@@ -26,15 +26,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             // Le rôle est lu directement depuis la BDD ($user['role']).
             // Si l'utilisateur a 'administrateur' dans la BDD, c'est ce qui sera utilisé.
-            $role_utilisateur = $user['role'] ?? 'bénévole';
+            $role_utilisateur = $user['role'] ?? 'administrateur';
+
 
             $_SESSION['benevole'] = [
                     'id_benevole' => $user['id_benevole'],
                     'nom'         => $user['nom'],
                     'prenom'      => $user['prenom'],
                     'email'       => $user['email'],
-                    'role'        => $user['role']
+                    'role'        => $role_utilisateur
             ];
+
+            $_SESSION['user'] = $user['id'];
+            $_SESSION['role'] = $role_utilisateur;
+            // admin / membre
 
             // --- FIN DE LA MODIFICATION ---
 
