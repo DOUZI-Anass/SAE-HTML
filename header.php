@@ -68,11 +68,16 @@ if (isset($page)) {
             </li>
 
             <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">INNOVATION SOCIALE</a>
-                <ul class="dropdown-menu"><li><a class="dropdown-item" href="vivreEnBonneSante.php">Vivre en bonne santé</a></li></ul>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="vivreEnBonneSante.php">Vivre en bonne santé</a></li>
+                </ul>
             </li>
 
             <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">SERVICES</a>
-                <ul class="dropdown-menu"><li><a class="dropdown-item" href="benevole.php">Formation des bénévoles</a></li></ul>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="benevole.php">Formation des bénévoles</a></li>
+                    <li><a class="dropdown-item" href="financement.php">Financer ses projets</a></li>
+                </ul>
             </li>
         </ul>
 
