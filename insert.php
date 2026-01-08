@@ -1,20 +1,20 @@
 <?php
+// 1. GESTION PROPRE DE LA SESSION (Évite la Notice)
 global $pdo;
-session_start();
-require 'config.php'; // Assurez-vous que la connexion PDO ($pdo) est incluse
-
-// --- 1. Protection de la page (Seuls les administrateurs peuvent insérer) ---
-if (!isset($_SESSION['benevole'])) {
-    header('Location: connexion.php');
-    exit;
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
 }
 
-$role_utilisateur = $_SESSION['benevole']['role'] ?? 'bénévole';
-if ($role_utilisateur !== 'administrateur') {
+// 2. CONFIGURATION & SÉCURITÉ
+require 'config.php';
+
+// Protection : Seuls les administrateurs
+if (!isset($_SESSION['benevole']) || $_SESSION['benevole']['role'] !== 'administrateur') {
     header('Location: index.php');
     exit;
 }
 
+// Protection : Uniquement les requêtes POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: admin.php');
     exit;
@@ -23,109 +23,83 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $success_message = '';
 $error_message = '';
 
-// --- 2. Détection du type de formulaire soumis ---
+// --- 3. TRAITEMENT DU FORMULAIRE ---
 
-// A. Traitement d'un NOUVEL ÉVÉNEMENT
-if (isset($_POST['titre_evenement'], $_POST['date_evenement'], $_POST['lieu_evenement'], $_POST['budget'])) {
-    $titre       = trim($_POST['titre_evenement']);
-    $date        = $_POST['date_evenement'];
-    $lieu        = trim($_POST['lieu_evenement']);
-    $budget      = $_POST['budget'];
+// A. CAS : NOUVEL ÉVÉNEMENT
+if (isset($_POST['titre_evenement'])) {
+
+    // On utilise ?? pour éviter les Warnings "Undefined array key"
+    $titre       = trim($_POST['titre_evenement'] ?? '');
+    $date        = $_POST['date_evenement'] ?? '';
+    $lieu        = trim($_POST['lieu_evenement'] ?? '');
+
+    // SOLUTION FATAL ERROR : Si le budget est vide, on force à 0
+    $budget_raw  = $_POST['budget'] ?? '';
+    $budget      = ($budget_raw !== '' && is_numeric($budget_raw)) ? (float)$budget_raw : 0;
+
     $description = trim($_POST['description_evenement'] ?? '');
 
-    if ($titre === '' || $date === '' || $lieu === '' || !is_numeric($budget) || $budget < 0) {
-        $error_message = "Erreur : tous les champs obligatoires ne sont pas valides.";
+    if ($titre === '' || $date === '') {
+        $error_message = "Erreur : Le titre et la date sont obligatoires.";
     } else {
         try {
-            // Insertion de l'événement
+            $pdo->beginTransaction();
+
+            // Insertion de l'événement (Vérifie bien tes noms de colonnes : lieu, budget, description)
             $stmt = $pdo->prepare("
                 INSERT INTO evenement (titre, date_evenement, lieu, budget, description)
                 VALUES (?, ?, ?, ?, ?)
             ");
             $stmt->execute([$titre, $date, $lieu, $budget, $description]);
 
-            // RÉCUPÉRATION DE L'ID IMMÉDIATEMENT APRÈS L'INSERTION
             $id_evenement = $pdo->lastInsertId();
 
-            // INSERTION DU MATÉRIEL (DOIT ÊTRE DANS CE BLOC)
+            // Insertion du matériel (Table de liaison 'utilise')
             if (!empty($_POST['materiels']) && is_array($_POST['materiels'])) {
-                $stmtUtilise = $pdo->prepare("
-                    INSERT INTO utilise (id_evenement, id_materiel, quantite)
-                    VALUES (?, ?, ?)
-                ");
-
+                $stmtUtilise = $pdo->prepare("INSERT INTO utilise (id_evenement, id_materiel, quantite) VALUES (?, ?, ?)");
                 foreach ($_POST['materiels'] as $id_materiel) {
                     $id_materiel = (int)$id_materiel;
                     if ($id_materiel > 0) {
-                        $stmtUtilise->execute([$id_evenement, $id_materiel, 1]); // quantite fixée à 1
+                        $stmtUtilise->execute([$id_evenement, $id_materiel, 1]);
                     }
                 }
             }
 
+            $pdo->commit();
             $success_message = "L'événement « {$titre} » a été ajouté avec succès.";
 
         } catch (PDOException $e) {
-            $error_message = "Erreur BDD lors de l'ajout de l'événement : " . $e->getMessage();
+            $pdo->rollBack();
+            $error_message = "Erreur BDD : " . $e->getMessage();
         }
     }
 }
-// B. Traitement d'un NOUVEAU MATÉRIEL
+
+// B. CAS : NOUVEAU MATÉRIEL
 elseif (isset($_POST['nom_materiel'])) {
     $nom      = trim($_POST['nom_materiel'] ?? '');
-    $quantite = (int)($_POST['quantite_materiel'] ?? -1);
+    $quantite = (int)($_POST['quantite_materiel'] ?? 0);
 
-    if ($nom === '' || $quantite < 0) {
-        $error_message = "Erreur : Le nom du matériel et la quantité sont obligatoires.";
+    if ($nom === '') {
+        $error_message = "Erreur : Le nom du matériel est obligatoire.";
     } else {
         try {
             $stmt = $pdo->prepare("INSERT INTO materiel (nom, qt_materiel) VALUES (?, ?)");
             $stmt->execute([$nom, $quantite]);
-
-            $success_message = "Le matériel '{$nom}' a été ajouté avec succès !";
+            $success_message = "Le matériel '{$nom}' a été ajouté !";
         } catch (PDOException $e) {
-            $error_message = "Erreur BDD lors de l'ajout du matériel : " . $e->getMessage();
+            $error_message = "Erreur BDD matériel : " . $e->getMessage();
         }
     }
 }
 
-// --- 3. Redirection avec message ---
+// --- 4. REDIRECTION FINALE ---
 $redirect_url = 'admin.php';
 if ($success_message) {
     $redirect_url .= '?message=' . urlencode($success_message) . '&type=success';
 } elseif ($error_message) {
-    $redirect_url .= '?message=' . urlencode($error_message) . '&type=error'; // Changé 'danger' en 'error' pour correspondre à tes variables
+    $redirect_url .= '?message=' . urlencode($error_message) . '&type=danger';
 }
-
-session_start();
-require 'config.php';
-
-// Sécurité admin
-if (!isset($_SESSION['benevole']) || $_SESSION['benevole']['role'] !== 'administrateur') {
-    header('Location: evenements.php');
-    exit;
-}
-
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: evenements.php');
-    exit;
-}
-
-$titre = trim($_POST['titre_evenement']);
-$date = $_POST['date_evenement'];
-$lieu = trim($_POST['lieu_evenement']);
-$description = trim($_POST['description_evenement']);
-
-$stmt = $pdo->prepare("
-    INSERT INTO evenement (titre, description, date_evenement, lieu)
-    VALUES (?, ?, ?, ?)
-");
-
-$stmt->execute([$titre, $description, $date, $lieu]);
-
-header('Location: evenements.php');
-exit;
-
 
 header('Location: ' . $redirect_url);
 exit;
-?>
