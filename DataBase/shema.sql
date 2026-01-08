@@ -123,3 +123,4 @@ INSERT INTO inscrit (id_evenement, id_benevole, date_inscription) VALUES
 INSERT INTO utilise (id_evenement, id_materiel, quantite) VALUES
                                                               (1, 1, 30), (1, 5, 1), -- Formation : 30 chaises, 1 projo
                                                               (6, 4, 4), (6, 3, 2);  -- Gala : 4 enceintes, 2 micros
+

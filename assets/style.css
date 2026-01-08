@@ -1164,3 +1164,127 @@ section .row .col-md-6.mb-4.mb-md-0:hover {
     border-radius: 50%;
     cursor: pointer;
 }
+/* --- 1. NETTOYAGE GÉNÉRAL (POUR TUER LE FOND VERT) --- */
+body {
+    background-color: #f8f9fa !important; /* Gris très clair pro */
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- 2. NAVBAR --- */
+#navbar {
+    background-color: #4da0c0 !important; /* Bleu FAGE */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* Liens du menu central */
+.navbar-nav .nav-link {
+    color: white !important;
+    font-size: 0.95rem;
+    transition: opacity 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    opacity: 0.8;
+}
+
+/* --- 3. BOUTON PROFIL "PILULE" --- */
+.profile-pill {
+    background: rgba(255, 255, 255, 0.2) !important; /* Translucide */
+    padding: 4px 15px 4px 5px !important; /* Espace optimisé pour l'icône ronde */
+    border-radius: 50px !important;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    transition: all 0.3s ease-in-out;
+}
+
+.profile-pill:hover {
+    background: rgba(255, 255, 255, 0.35) !important; /* Plus clair au survol */
+    border-color: white !important;
+    transform: translateY(-1px); /* Petit effet de levier */
+}
+
+/* --- 4. MENU DÉROULANT (DROPDOWN) --- */
+.custom-profile-menu {
+    position: absolute;
+    right: 0 !important; /* Aligné à droite du bouton */
+    left: auto !important;
+    min-width: 240px !important;
+    border-radius: 12px !important;
+    border: none !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15) !important;
+    margin-top: 12px !important; /* Petit espace sous le bouton */
+    padding: 10px 0 !important;
+    background-color: white !important;
+    z-index: 2000;
+}
+
+/* LE PONT INVISIBLE (Magic Bridge) */
+/* C'est ce qui permet à la souris de passer du bouton au menu sans que ça ferme */
+.custom-profile-menu::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    right: 0;
+    width: 100%;
+    height: 20px;
+    background: transparent;
+}
+
+/* --- 5. ÉLÉMENTS DU MENU --- */
+.dropdown-item {
+    padding: 10px 20px !important;
+    font-weight: 500;
+    color: #444;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-item i {
+    width: 25px; /* Aligne toutes les icônes verticalement */
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.dropdown-item:hover {
+    background-color: #f1f8ff !important; /* Bleu très pâle au survol */
+    color: #4da0c0; /* Texte devient bleu */
+}
+
+.dropdown-header {
+    font-size: 0.75rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 20px !important;
+}
+
+/* --- 6. UTILITAIRE POUR LE CONTENU SOUS LA NAVBAR --- */
+/* Ajoute cette classe à tes div principales si le texte est caché */
+.content-spacer {
+    margin-top: 100px;
+}
+/* 1. Fond gris de la page pour faire ressortir le blanc */
+.bg-gris {
+    background-color: #f4f6f9 !important;
+}
+
+/* 2. Le style de la carte blanche (texte) */
+.bloc-blanc {
+    background-color: white !important;
+    padding: 40px !important;       /* Espace à l'intérieur */
+    border-radius: 20px !important; /* Coins arrondis */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important; /* Ombre */
+    border: 1px solid rgba(0,0,0,0.02); /* Bordure ultra fine */
+}
+
+/* 3. Le style des images (pour qu'elles soient assorties) */
+.imgM {
+    border-radius: 20px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+    max-width: 100%;
+    height: auto;
+}
