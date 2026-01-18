@@ -74,8 +74,6 @@ if (session_status() === PHP_SESSION_NONE) {
         </ul>
 
         <div class="d-flex align-items-center gap-3">
-            <i class="fa-solid fa-magnifying-glass text-white fs-5" style="cursor: pointer;"></i>
-
             <?php if (isset($_SESSION['benevole'])): ?>
                 <div class="dropdown">
                     <a class="nav-link dropdown-toggle d-flex align-items-center text-white profile-pill"

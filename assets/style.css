@@ -1288,3 +1288,118 @@ body {
     max-width: 100%;
     height: auto;
 }
+
+.page-formation-fage { background-color: #f8f9fa; padding-bottom: 60px; font-family: 'Segoe UI', sans-serif; }
+
+/* Header Pro */
+.intro-section {
+    background: linear-gradient(135deg, #0056b3 0%, #003d7a 100%);
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+    margin-bottom: 50px;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* ----- BLOC CARTE ----- */
+.formation-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 30px;
+    border: 1px solid rgba(0,0,0,0.05);
+    display: flex; /* Assure que tout s'aligne */
+}
+
+.formation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+/* ----- GESTION DES IMAGES ----- */
+/* On impose une hauteur minimale pour que les boîtes soient égales visuellement */
+.card-img-container {
+    position: relative;
+    min-height: 320px; /* J'ai augmenté un peu pour l'équilibre */
+    height: 100%;      /* Prend toute la hauteur disponible de la carte */
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Cas 1 : PHOTO (Accompagnement) -> Cover (Zoom pour remplir) */
+.card-img-container img.img-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Cas 2 : LOGO (Congrès/Wiki) -> Contain (Entier mais GRAND) */
+/* C'est ici que j'ai corrigé ton problème de "bordures énormes" */
+.card-img-container img.img-logo {
+    width: 90%;       /* Prend 90% de la largeur du cadre */
+    height: 90%;      /* Prend 90% de la hauteur du cadre */
+    object-fit: contain; /* S'adapte sans être coupé */
+    padding: 0;       /* On enlève le padding inutile */
+}
+
+/* ----- CONTENU TEXTE ----- */
+.card-content {
+    padding: 40px; /* Plus d'espace pour respirer */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.badge-fage {
+    background: #e7f0ff;
+    color: #0056b3;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    display: inline-block;
+    margin-bottom: 15px;
+    align-self: flex-start;
+}
+
+h2 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Liste propre */
+ul.custom-list { list-style: none; padding-left: 0; margin-top: 10px; }
+ul.custom-list li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 30px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #333;
+}
+ul.custom-list li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #28a745;
+    font-size: 1.2em;
+    font-weight: bold;
+}

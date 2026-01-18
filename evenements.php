@@ -127,6 +127,24 @@ if (isset($_SESSION['benevole']['id_benevole'])) {
                                     </p>
 
                                     <div class="d-flex flex-wrap align-items-center gap-3">
+                                        <?php if (isset($_SESSION['benevole']) && $_SESSION['benevole']['role'] === 'administrateur'): ?>
+
+                                            <a href="modifier_event.php?id=<?= $event['id_evenement'] ?>"
+                                               class="btn btn-warning btn-sm">
+                                                <i class="fa-solid fa-pen"></i> Modifier
+                                            </a>
+
+                                            <form action="supprimer_event.php" method="POST"
+                                                  onsubmit="return confirm('Voulez-vous vraiment supprimer cet événement ?');"
+                                                  class="m-0">
+                                                <input type="hidden" name="id_evenement" value="<?= $event['id_evenement'] ?>">
+                                                <button type="submit" class="btn btn-danger btn-sm">
+                                                    <i class="fa-solid fa-trash"></i> Supprimer
+                                                </button>
+                                            </form>
+
+                                        <?php endif; ?>
+
 
                                         <button class="btn btn-outline-secondary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#map-<?= $event['id_evenement'] ?>">
                                             <i class="fa-solid fa-map-location-dot"></i> Voir le plan d'accès
