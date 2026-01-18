@@ -124,3 +124,32 @@ INSERT INTO utilise (id_evenement, id_materiel, quantite) VALUES
                                                               (1, 1, 30), (1, 5, 1), -- Formation : 30 chaises, 1 projo
                                                               (6, 4, 4), (6, 3, 2);  -- Gala : 4 enceintes, 2 micros
 
+INSERT INTO article (titre, contenu, date_creation, image, id_benevole) VALUES
+                                                                            (
+                                                                                'Baromètre de la précarité étudiante 2025',
+                                                                                'Le nouveau baromètre de la précarité étudiante révèle une situation toujours préoccupante, marquée par l’inflation et le coût du logement qui pèsent sur les étudiants.',
+                                                                                '2026-01-18',
+                                                                                'Barometre.png',
+                                                                                1
+                                                                            ),
+                                                                            (
+                                                                                'Coût de la rentrée 2025',
+                                                                                'Le coût d’une année étudiante augmente de 2.2%. Un étudiant devra en moyenne débourser 3.227 euros pour sa rentrée, une hausse historique.',
+                                                                                '2026-01-18',
+                                                                                'cout_rentree.png',
+                                                                                1
+                                                                            ),
+                                                                            (
+                                                                                'Bouge ton campus',
+                                                                                'La FAGE confirme sa place de première organisation étudiante représentative au CNESER à l’issue des élections, renforçant son poids dans les négociations.',
+                                                                                '2026-01-18',
+                                                                                'bouge_ton_campus.png',
+                                                                                1
+                                                                            ),
+                                                                            (
+                                                                                'OOUUUUIII SA FONCTIONNE',
+                                                                                'Ceci est un article de test pour valider que le système de publication fonctionne parfaitement !',
+                                                                                '2026-01-18',
+                                                                                'don.png',
+                                                                                1
+                                                                            );
